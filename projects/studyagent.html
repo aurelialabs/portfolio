@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>考途 StudyAgent | 肖依婷作品集</title>
+    <meta name="description" content="考途 StudyAgent 项目案例，展示从产品定位、Dify Workflow、Prompt 到测试迭代的完整过程。" />
+    <meta name="theme-color" content="#10213f" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <script defer src="../assets/js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="主导航">
+        <a class="brand" href="../index.html">肖依婷 <small>AI 产品经理</small></a>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation" data-menu-button>菜单</button>
+        <div class="nav-links" id="site-navigation" data-navigation>
+          <a href="../index.html#work" aria-current="page">作品</a>
+          <a href="../index.html#about">关于</a>
+          <a href="../index.html#contact">联系我</a>
+          <a href="https://github.com/aurelialabs/studyagent-dify" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="project-hero">
+        <div class="container">
+          <p class="eyebrow reveal">Vibe Coding 项目</p>
+          <h1 class="reveal">考途 StudyAgent</h1>
+          <p class="project-summary reveal">将教材章节转化为结构化复习报告，连接理解、记忆、自测与行动计划。</p>
+          <div class="project-actions reveal">
+            <a class="button" href="https://udify.app/workflow/Ml6LKD4l0pltIw54q" target="_blank" rel="noreferrer">体验 Demo ↗</a>
+            <a class="button secondary" href="https://github.com/aurelialabs/studyagent-dify" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </div>
+          <dl class="project-meta reveal">
+            <div><dt>时间</dt><dd>2026.07</dd></div>
+            <div><dt>角色</dt><dd>独立完成</dd></div>
+            <div><dt>类型</dt><dd>AI 教育产品</dd></div>
+            <div><dt>状态</dt><dd>原型验证</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <div class="container project-body">
+        <section class="project-section reveal">
+          <h2>问题背景</h2>
+          <div class="project-content">
+            <p>教材型考试用户并不缺资料，真正的困难是资料太多、重点不清、笔记整理耗时，背诵、自测和复习计划又分散在不同工具中。</p>
+            <p>通用对话模型可以总结文本，但单轮 Prompt 同时承担多项任务时，容易出现结构缺失、答案错位和计划脱离用户时间等问题。</p>
+            <div class="callout"><p>首版最需要验证的不是长期学习管理，而是能否把一段教材稳定转化为可执行的复习材料。</p></div>
+          </div>
+        </section>
+
+        <section class="project-section reveal">
+          <h2>产品判断</h2>
+          <div class="project-content">
+            <h3>为什么选择 Workflow</h3>
+            <p>复习报告是一条连续链路。后续任务依赖前一步结果，自测题需要覆盖已提炼的重点，答案解析必须对应已有题目，计划还要受到用户基础与时间约束。</p>
+            <div class="process" aria-label="Workflow 节点">
+              <div><strong>章节解析</strong><span>先建立内容框架</span></div>
+              <div><strong>重点提炼</strong><span>区分理解与记忆</span></div>
+              <div><strong>背诵笔记</strong><span>转化为可复习表达</span></div>
+              <div><strong>自测题</strong><span>只生成题目</span></div>
+              <div><strong>答案解析</strong><span>逐题严格对应</span></div>
+              <div><strong>复习计划</strong><span>结合时间与基础</span></div>
+            </div>
+            <h3>MVP 边界</h3>
+            <p>首版包含章节解析、重点、背诵笔记、自测题、答案解析和复习计划。账户体系、整本教材解析、真题知识库、扫描版 PDF 自动 OCR 和 Word 导出暂不进入 MVP。</p>
+          </div>
+        </section>
+
+        <section class="project-section reveal">
+          <h2>方案设计</h2>
+          <div class="project-content">
+            <p>用户输入考试类型、科目、教材信息、章节正文、当前基础、每日时间和复习周期。六个节点依次加工内容，最终汇总为结构化学习报告。</p>
+            <figure class="evidence wide">
+              <img src="../assets/images/studyagent-workflow.png" alt="考途 StudyAgent 六节点 Workflow" />
+              <figcaption>真实 Workflow 截图，用于检查节点职责和变量连接关系。</figcaption>
+            </figure>
+            <h3>Prompt 约束</h3>
+            <ul>
+              <li>每个节点只完成一个明确任务。</li>
+              <li>输出格式固定，便于下游节点读取。</li>
+              <li>要求基于用户材料，减少凭常识补写。</li>
+              <li>题目输出作为答案节点的显式输入。</li>
+              <li>复习计划必须结合用户基础、每日时间和周期。</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="project-section reveal">
+          <h2>Vibe Coding</h2>
+          <div class="project-content">
+            <p>我使用 Codex 等 AI 工具辅助梳理文档、检查 Prompt、整理仓库和定位问题，但产品范围、节点职责、变量依赖、结果验收与迭代优先级由我判断。</p>
+            <ol>
+              <li>从用户连续任务出发，定义核心问题。</li>
+              <li>限定 MVP，优先验证材料到复习报告的链路。</li>
+              <li>拆解 PRD、Workflow、Prompt、测试、Demo 和项目文档。</li>
+              <li>借助 AI 执行重复工作，并逐项检查实际结果。</li>
+              <li>根据运行日志和测试结果调整流程。</li>
+            </ol>
+            <div class="callout"><p>Vibe Coding 的价值不在生成了多少代码，而在能否把模糊想法拆成可执行任务，并对最终结果负责。</p></div>
+          </div>
+        </section>
+
+        <section class="project-section reveal">
+          <h2>测试与迭代</h2>
+          <div class="project-content">
+            <p>我使用约 270KB 的真实教育学 PDF 完成一次端到端测试。Workflow 能读取材料并生成知识框架、重点和复习相关内容。</p>
+            <div class="evidence-grid">
+              <figure class="evidence">
+                <img src="../assets/images/studyagent-input.png" alt="StudyAgent 教材输入与学习条件设置" />
+                <figcaption>输入示例，展示教材与个人学习条件。</figcaption>
+              </figure>
+              <figure class="evidence">
+                <img src="../assets/images/studyagent-output.png" alt="StudyAgent 结构化复习报告输出" />
+                <figcaption>输出示例，内容与教材相关且结构完整。</figcaption>
+              </figure>
+            </div>
+            <h3>关键 bad case</h3>
+            <ul>
+              <li>变量未正确插入时，模型会反问用户补充材料。</li>
+              <li>答案节点没有引用题目时，题目与答案可能错位。</li>
+              <li>整本教材输入过长时，输出容易泛化。</li>
+              <li>扫描版 PDF 本质是图片，需要先 OCR。</li>
+              <li>多节点调用会消耗模型额度，演示前需要检查可用性。</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="project-section reveal">
+          <h2>成果与限制</h2>
+          <div class="project-content">
+            <div class="data-points">
+              <div class="data-point"><strong>6</strong><span>套独立节点 Prompt</span></div>
+              <div class="data-point"><strong>1</strong><span>次真实 PDF 端到端测试</span></div>
+            </div>
+            <p>当前已完成可运行的 Dify Workflow、Web App、DSL、PRD、Prompt 文档、测试报告、迭代记录和公开 GitHub 仓库。</p>
+            <p>项目仍处于原型验证阶段。测试样本数量不足，未接入真题知识库，长文本和扫描版 PDF 仍需要预处理，Dify Cloud 额度也会影响公开演示稳定性。</p>
+          </div>
+        </section>
+
+        <section class="project-section reveal">
+          <h2>下一步</h2>
+          <div class="project-content">
+            <ol>
+              <li>补充考公、教资等不同教材和异常输入测试。</li>
+              <li>建立更清晰的评价维度与测试记录表。</li>
+              <li>增加长文本分段和文件类型判断。</li>
+              <li>根据真实反馈再判断知识库、错题复盘和进度能力的优先级。</li>
+            </ol>
+          </div>
+        </section>
+
+        <nav class="next-projects" aria-label="其他项目">
+          <a href="video-keypoints.html">下一个：视频人物关键点识别 →</a>
+          <a href="../index.html#work">返回作品首页 →</a>
+        </nav>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner"><span>© <span data-year>2026</span> 肖依婷</span><span>项目状态：原型验证</span></div>
+    </footer>
+  </body>
+</html>
