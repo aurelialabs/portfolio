@@ -4,201 +4,105 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>肖依婷 | AI 产品经理作品集</title>
-    <meta name="description" content="肖依婷的 AI 产品经理作品集，展示 Vibe Coding、AI Workflow、产品研究、数据评测与实习项目。" />
+    <meta name="description" content="肖依婷的 AI 产品经理作品集。" />
     <meta name="theme-color" content="#10213f" />
     <meta property="og:title" content="肖依婷 | AI 产品经理作品集" />
     <meta property="og:description" content="用产品方法定义问题，用 AI 工具验证方案。" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="assets/images/portrait.jpg" />
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <script defer src="assets/js/main.js"></script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "肖依婷",
-        "jobTitle": "AI 产品经理",
-        "email": "mailto:13548674215@163.com",
-        "url": "https://github.com/aurelialabs",
-        "alumniOf": ["南京师范大学", "长沙学院"],
-        "knowsAbout": ["AI 产品设计", "Dify", "Prompt Engineering", "用户研究", "数据分析"]
-      }
-    </script>
   </head>
   <body>
-    <a class="skip-link" href="#main">跳到主要内容</a>
+    <div class="app-shell">
+      <a class="skip-link" href="#main">跳到主要内容</a>
 
-    <header class="site-header">
-      <nav class="nav-shell" aria-label="主导航">
-        <a class="brand" href="index.html">
-          肖依婷
-          <small>AI 产品经理</small>
-        </a>
-        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation" data-menu-button>菜单</button>
-        <div class="nav-links" id="site-navigation" data-navigation>
-          <a href="#work">作品</a>
-          <a href="#about">关于</a>
-          <a href="#contact">联系我</a>
-          <a href="https://github.com/aurelialabs" target="_blank" rel="noreferrer">GitHub ↗</a>
-        </div>
-      </nav>
-    </header>
+      <header class="site-header">
+        <nav class="nav-shell" aria-label="主导航">
+          <a class="brand" href="#home" data-home-link>
+            <span data-profile-name>肖依婷</span>
+            <small>AI 产品经理</small>
+          </a>
+          <div class="nav-links" role="group" aria-label="作品集视图">
+            <button type="button" data-view-target="home">首页</button>
+            <button type="button" data-view-target="internship">实习</button>
+            <button type="button" data-view-target="project">项目</button>
+          </div>
+        </nav>
+      </header>
 
-    <main id="main">
-      <div class="container">
-        <section class="hero" aria-labelledby="hero-title">
-          <div class="hero-copy reveal">
-            <p class="eyebrow">AI 产品经理 | AI 教育方向</p>
-            <h1 id="hero-title">把需求变成<br /><span>可验证的产品</span></h1>
-            <p class="hero-lead">连接用户问题、AI 方案与产品落地，用真实测试推动下一次判断。</p>
-            <div class="hero-actions">
-              <a class="button" href="#work">浏览作品</a>
-              <a class="button secondary" href="mailto:13548674215@163.com">联系我</a>
+      <p class="visually-hidden" data-view-announcement aria-live="polite" aria-atomic="true"></p>
+
+      <main id="main">
+        <section class="view view-home" data-view="home" aria-labelledby="home-title">
+          <div class="home-layout">
+            <div class="home-profile">
+              <p class="eyebrow" data-profile-target-role>AI 产品经理实习</p>
+              <h1 id="home-title" tabindex="-1" data-view-heading><span data-profile-name>肖依婷</span></h1>
+              <p data-profile-school>南京师范大学</p>
+              <p data-profile-education>教育技术学硕士在读</p>
+              <p data-profile-background>计算机人工智能</p>
+              <p class="content-error" data-content-error role="status" hidden></p>
+              <dl class="profile-facts">
+                <div>
+                  <dt>所在城市</dt>
+                  <dd data-profile-city>上海</dd>
+                </div>
+                <div>
+                  <dt>联系邮箱</dt>
+                  <dd><a data-profile-email href="mailto:13548674215@163.com">13548674215@163.com</a></dd>
+                </div>
+                <div>
+                  <dt>联系电话</dt>
+                  <dd><a data-profile-phone href="tel:13548674215">13548674215</a></dd>
+                </div>
+              </dl>
+            </div>
+            <figure class="home-portrait">
+              <img data-profile-portrait src="assets/images/portrait.jpg" width="520" height="650" alt="肖依婷职业照" />
+            </figure>
+            <div class="home-entry-actions" aria-label="浏览作品">
+              <button type="button" data-entry-view="internship">查看实习经历</button>
+              <button type="button" data-entry-view="project">查看项目作品</button>
             </div>
           </div>
-          <figure class="portrait-wrap reveal">
-            <img src="assets/images/portrait.jpg" width="520" height="650" alt="肖依婷职业照" />
-          </figure>
         </section>
-      </div>
 
-      <section class="section compact" aria-label="求职信息">
-        <div class="container">
-          <dl class="quick-facts reveal">
-            <div>
-              <dt>求职方向</dt>
-              <dd>AI 产品经理实习</dd>
-            </div>
-            <div>
-              <dt>所在城市</dt>
-              <dd>上海</dd>
-            </div>
-            <div>
-              <dt>到岗时间</dt>
-              <dd>可随时到岗</dd>
-            </div>
-          </dl>
-        </div>
-      </section>
-
-      <section class="section" id="capabilities">
-        <div class="container capability-layout">
-          <div class="capability-statement reveal">既能完成产品研究，也能借助 AI 工具把判断做成原型并验证。</div>
-          <ul class="capability-list" aria-label="核心能力">
-            <li class="capability-item reveal">
-              <h3>产品研究与设计</h3>
-              <p>用户调研、需求分析、竞品分析、产品流程和 PRD，把零散信息转化为可执行方案。</p>
-            </li>
-            <li class="capability-item reveal">
-              <h3>AI 产品方案</h3>
-              <p>结合任务复杂度、数据来源和稳定性要求，判断 Prompt、Workflow、RAG 与 Agent 的适用位置。</p>
-            </li>
-            <li class="capability-item reveal">
-              <h3>Vibe Coding</h3>
-              <p>使用 Codex、Dify 等工具拆解需求、搭建原型和排查问题，并对结果验收负责。</p>
-            </li>
-            <li class="capability-item reveal">
-              <h3>数据与评测</h3>
-              <p>使用 Python、SQL、SPSS 处理数据，设计测试场景，记录 bad case 并形成优化建议。</p>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="section" id="work">
-        <div class="container">
-          <div class="section-heading reveal">
-            <h2>三段经历，三个不同的产品问题</h2>
-            <p>点击进入独立项目页，查看我的判断、方案、测试和复盘。</p>
+        <section class="view workspace-view" data-view="internship" aria-labelledby="internship-title" hidden>
+          <div class="workspace">
+            <aside class="entry-sidebar" aria-label="实习经历导航">
+              <h2 id="internship-title" tabindex="-1" data-view-heading>实习经历</h2>
+              <nav aria-label="实习经历条目">
+                <div data-entry-nav="internships" role="tablist" aria-label="实习经历条目"></div>
+              </nav>
+            </aside>
+            <article class="detail-scroll" data-detail-scroll data-entry-detail="internships" role="tabpanel" id="internships-panel" tabindex="0"></article>
           </div>
+        </section>
 
-          <div class="work-list">
-            <a class="work-item featured reveal" href="projects/studyagent.html">
-              <div class="work-copy">
-                <h3>考途 StudyAgent</h3>
-                <p>把教材章节转化为知识框架、重点笔记、自测题、答案解析和复习计划。</p>
-                <div class="work-link">查看项目 →</div>
-              </div>
-              <div class="work-meta">
-                <img class="work-preview" src="assets/images/studyagent-workflow.png" alt="考途 StudyAgent Workflow 截图" />
-                <strong>Vibe Coding 项目</strong>
-                <span>Dify Workflow / Prompt / 测试迭代</span>
-                <span>独立完成 | 2026.07</span>
-              </div>
-            </a>
-
-            <a class="work-item reveal" href="projects/video-keypoints.html">
-              <div class="work-copy">
-                <h3>视频人物关键点识别</h3>
-                <p>从视频后期业务流程出发，验证人体关键点识别的应用位置与失败边界。</p>
-                <div class="work-link">查看项目 →</div>
-              </div>
-              <div class="work-meta">
-                <strong>AI 视频处理实习</strong>
-                <span>业务分析 / 数据处理 / 技术协作</span>
-                <span>湖南马栏山视频先进技术研究院 | 2024.04-2024.06</span>
-              </div>
-            </a>
-
-            <a class="work-item reveal" href="projects/ai-classroom.html">
-              <div class="work-copy">
-                <h3>AI 长大智创课堂</h3>
-                <p>通过学生与家长调研、课程设计和数据分析，探索 K12 AI 编程教育产品优化。</p>
-                <div class="work-link">查看项目 →</div>
-              </div>
-              <div class="work-meta">
-                <strong>产品与研究实践</strong>
-                <span>用户研究 / 课程产品 / 项目推进</span>
-                <span>项目负责人 | 2022.10-2023.06</span>
-              </div>
-            </a>
+        <section class="view workspace-view" data-view="project" aria-labelledby="project-title" hidden>
+          <div class="workspace">
+            <aside class="entry-sidebar" aria-label="项目作品导航">
+              <h2 id="project-title" tabindex="-1" data-view-heading>项目作品</h2>
+              <nav aria-label="项目作品条目">
+                <div data-entry-nav="projects" role="tablist" aria-label="项目作品条目"></div>
+              </nav>
+            </aside>
+            <article class="detail-scroll" data-detail-scroll data-entry-detail="projects" role="tabpanel" id="projects-panel" tabindex="0"></article>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
+    </div>
 
-      <section class="section" id="about">
-        <div class="container about-grid">
-          <div class="about-copy reveal">
-            <div class="section-heading">
-              <h2>计算机背景，教育产品视角</h2>
-            </div>
-            <p>我具备计算机人工智能背景，目前就读于南京师范大学教育技术学硕士，关注 AI 教育、知识建构、智能学习与人机协同。</p>
-            <p>计算机训练帮助我理解模型、数据和工程边界，教育技术学训练让我更关注真实用户、学习过程与产品价值。</p>
-          </div>
-          <div class="education">
-            <article class="reveal">
-              <h3>南京师范大学</h3>
-              <p>教育技术学 | 理科硕士 | 2025.09-至今</p>
-              <p>研究方向：AI 教育、知识建构与智能学习、人机协同学习</p>
-            </article>
-            <article class="reveal">
-              <h3>长沙学院</h3>
-              <p>计算机人工智能方向 | 工学学士 | 2021.09-2025.06</p>
-              <p>相关课程：机器学习、自然语言处理、Python、模式识别</p>
-            </article>
-          </div>
-        </div>
-      </section>
+    <dialog data-lightbox aria-label="图片预览">
+      <figure>
+        <img data-lightbox-image alt="" />
+        <figcaption data-lightbox-caption></figcaption>
+      </figure>
+      <button type="button" data-lightbox-close>关闭图片预览</button>
+    </dialog>
 
-      <section class="section" id="contact">
-        <div class="container">
-          <div class="contact-panel reveal">
-            <h2>如果岗位需要能连接产品与 AI 的实习生，欢迎联系我。</h2>
-            <div class="contact-links">
-              <a href="mailto:13548674215@163.com">13548674215@163.com</a>
-              <a href="tel:13548674215">13548674215</a>
-              <a href="https://github.com/aurelialabs" target="_blank" rel="noreferrer">github.com/aurelialabs ↗</a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <span>© <span data-year>2026</span> 肖依婷</span>
-        <span>项目内容已按公开要求脱敏</span>
-      </div>
-    </footer>
+    <script src="content/portfolio-data.js"></script>
+    <script src="assets/js/content-model.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
