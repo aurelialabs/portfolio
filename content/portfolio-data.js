@@ -2,7 +2,7 @@
 window.PORTFOLIO_DATA = {
   profile: {
     name: "肖依婷",
-    targetRole: "AI 产品经理实习",
+    targetRole: "AI 产品经理实习｜大模型应用 · 通用大模型",
     school: "南京师范大学",
     education: "教育技术学硕士在读",
     background: "计算机人工智能",
@@ -12,6 +12,24 @@ window.PORTFOLIO_DATA = {
     portrait: "assets/images/portrait.jpg"
   },
   internships: [{
+    id: "smartcs",
+    navLabel: "上海淘课 · 智能客服",
+    eyebrow: "AI 产品经理实习",
+    title: "上海淘课 · SmartCS 智能客服",
+    subtitle: "负责企业培训智能客服项目的搭建与优化，连接知识问答、课程及讲师推荐与人工服务。",
+    status: "持续优化",
+    hidden: false,
+    meta: [{ label: "时间", value: "2026.07—2026.10" }, { label: "公司", value: "上海淘课" }, { label: "岗位", value: "AI 产品经理" }, { label: "方向", value: "大模型应用 · 智能客服" }],
+    sections: [
+      { id: "overview", navLabel: "项目概览", title: "SmartCS 智能客服", blocks: [{ type: "paragraph", text: "2026 年 7 月至 10 月，我在上海淘课担任 AI 产品经理，负责 SmartCS 智能客服项目。项目面向企业培训业务，支持知识库问答、课程与讲师推荐、多轮对话和人工接管。" }] },
+      { id: "business", navLabel: "业务背景", title: "业务背景", blocks: [{ type: "paragraph", text: "用户会同时咨询平台政策、课程内容、讲师信息和企业内训方案。问题类型不同，需要的依据、工具与后续服务动作也不同。" }] },
+      { id: "goals", navLabel: "产品目标", title: "产品目标", blocks: [{ type: "paragraph", text: "让客服先识别用户的完整目标，再选择知识问答、结构化搜索或人工服务；回答应基于可核实的知识和真实工具结果。" }] },
+      { id: "work", navLabel: "个人负责", title: "项目搭建与优化", blocks: [{ type: "paragraph", text: "我负责 SmartCS 整个项目，围绕企业培训客服的真实问题推进方案设计、功能搭建、测试与迭代。" }, { type: "bullets", items: ["梳理知识问答、找课程、找讲师、闲聊与转人工等客服场景。", "围绕意图识别、多轮任务状态和条件继承，优化连续对话体验。", "结合知识库检索与结构化搜索，让客服区分解释性问题和推荐请求。", "整理无答案、无搜索结果、条件冲突等边界场景，明确澄清或人工接管方式。"] }] },
+      { id: "results", navLabel: "阶段产出", title: "阶段产出与边界", blocks: [{ type: "paragraph", text: "项目已形成可运行的智能客服系统，包含对话前台、知识库管理、推荐搜索和人工接管能力。当前作品集仅展示产品方案与功能范围，暂不使用未经核实的业务效果指标。" }] },
+      { id: "collaboration", navLabel: "产品判断", title: "产品判断", blocks: [{ type: "paragraph", text: "客服体验的关键在于让模型理解需求，同时让场景权限、用户明确条件和工具结果保持可控。推荐解释只能引用实际生效的筛选条件与返回内容。" }] },
+      { id: "review", navLabel: "后续优化", title: "后续优化", blocks: [{ type: "paragraph", text: "继续关注知识覆盖、推荐相关性、多轮条件保持和转人工时机，并通过真实问题与失败案例推动迭代。" }] }
+    ]
+  }, {
     id: "video-keypoints",
     navLabel: "视频人物关键点识别",
     eyebrow: "AI 视频处理实习",
@@ -31,6 +49,22 @@ window.PORTFOLIO_DATA = {
     ]
   }],
   projects: [
+    {
+      id: "zhiji", navLabel: "知迹 · AI 学习平台", eyebrow: "个人项目", title: "知迹（Zhiji）", subtitle: "把大模型辅助学习与可复核的过程证据连接起来，服务学习者与教育研究者。", status: "已上线 · 迭代中", hidden: false,
+      links: [{ label: "体验学习者端 ↗", href: "https://8.218.22.55/learner/login" }, { label: "查看研究者端 ↗", href: "https://8.218.22.55/admin/login" }],
+      meta: [{ label: "角色", value: "个人项目" }, { label: "方向", value: "大模型应用 · AI 教育" }],
+      sections: [
+        { id: "overview", navLabel: "项目概览", title: "知迹 · AI 学习与教育研究平台", blocks: [{ type: "paragraph", text: "知迹包含学习者端和研究者端：学习者可以直接问答或选择系统学习，研究者可以查看、复核和分析学习过程证据。" }] },
+        { id: "problem", navLabel: "问题背景", title: "问题背景", blocks: [{ type: "paragraph", text: "单次问答难以持续追踪学习目标、误区与进展；研究者也需要从真实对话中找到可定位、可复核的学习过程证据。" }] },
+        { id: "goals", navLabel: "产品目标", title: "产品目标", blocks: [{ type: "paragraph", text: "同时支持灵活问答与系统学习，让学习过程中的诊断、反馈和支架有明确状态，并让研究分析能够追溯到原始对话。" }] },
+        { id: "solution", navLabel: "学习者体验", title: "学习者体验", blocks: [{ type: "paragraph", text: "用户可以直接提问，也可以主动进入系统学习。系统学习按目标确认、初始诊断、学习计划、微教学、检测、反馈与阶段评价推进；遇到关键误区时提供有限补救。" }, { type: "steps", items: [{ label: "01", title: "确认目标", text: "明确本轮学习任务" }, { label: "02", title: "诊断与计划", text: "记录基础和学习路径" }, { label: "03", title: "微教学与检测", text: "围绕知识单元推进" }, { label: "04", title: "反馈与复盘", text: "保留需要加强的内容" }] }] },
+        { id: "ai-choice", navLabel: "AI 与知识库", title: "AI 与知识库设计", blocks: [{ type: "paragraph", text: "平台结合大模型与课程知识库生成回答，并展示资料引用。课程资料检索支持静态索引与动态知识库的回退，避免检索依赖不可用时中断学习。" }] },
+        { id: "build", navLabel: "研究者端", title: "研究者端", blocks: [{ type: "paragraph", text: "研究者端支持按课程、学生、日期、学习状态及认知和情绪编码筛选，查看原始对话、关键事件与个体及群体视图。人工评价独立保存，不覆盖 AI 自动编码。" }] },
+        { id: "test", navLabel: "验证方式", title: "验证方式", blocks: [{ type: "paragraph", text: "项目通过学习流程、资料引用、权限隔离和研究数据筛选等场景进行自动化与人工验收；图表只表达记录到的过程数据，不将其解释为因果效果。" }] },
+        { id: "result", navLabel: "当前成果", title: "当前成果与限制", blocks: [{ type: "paragraph", text: "学习者端的微学习闭环与研究者端 V1.0 已实现，并提供线上体验。教学自然度、摘要质量和大规模使用效果仍需要进一步验证。" }] },
+        { id: "review", navLabel: "下一步", title: "下一步", blocks: [{ type: "bullets", items: ["继续用真实学习场景检验教学反馈和支架是否有效。", "完善研究者对过程证据的复核与解释。", "扩大资料类型与检索质量验证。"] }] }
+      ]
+    },
     {
       id: "studyagent", navLabel: "考途 StudyAgent", eyebrow: "Vibe Coding 项目", title: "考途 StudyAgent", subtitle: "将教材章节转化为结构化复习报告，连接理解、记忆、自测与行动计划。", status: "原型验证", hidden: false,
       meta: [{ label: "时间", value: "2026.07" }, { label: "角色", value: "独立完成" }, { label: "类型", value: "AI 教育产品" }],

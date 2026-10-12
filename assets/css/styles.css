@@ -480,6 +480,30 @@ button:disabled {
   font-weight: 800;
 }
 
+.detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.detail-actions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 8px 14px;
+  border: 1px solid var(--color-ink);
+  border-radius: 999px;
+  background: var(--color-mint);
+  font-size: 14px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.detail-actions a:hover {
+  background: var(--color-butter);
+}
+
 .entry-meta {
   margin: 24px 0 0;
   display: flex;

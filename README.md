@@ -1,11 +1,12 @@
 # 肖依婷 AI 产品经理作品集网站
 
-一个无需构建工具和后台的静态个人作品集网站，包含导航型首页和三个独立项目详情页。
+一个无需构建工具和后台的静态个人作品集网站。首页通过内容数据展示个人信息、实习经历与项目作品，`projects/` 目录保留三个独立详情页。
 
 ## 页面
 
 - `index.html`：作品集首页
-- `projects/studyagent.html`：考途 StudyAgent
+- `content/portfolio-data.js`：首页个人信息、实习经历与项目作品的数据源
+- `projects/studyagent.html`：考途 StudyAgent 独立详情页
 - `projects/video-keypoints.html`：视频人物关键点识别
 - `projects/ai-classroom.html`：AI 长大智创课堂
 
@@ -13,7 +14,7 @@
 
 最简单的方式是双击 `index.html`，使用浏览器打开。
 
-如需使用本地静态服务器，在 `portfolio-site` 目录运行：
+如需使用本地静态服务器，在仓库根目录运行：
 
 ```powershell
 python -m http.server 8000
@@ -27,13 +28,13 @@ http://localhost:8000
 
 ## 更新内容
 
-- 首页内容位于 `index.html`。
-- 项目详情位于 `projects/`。
+- 首页结构、标题和社交分享描述位于 `index.html`；个人信息、实习和项目正文位于 `content/portfolio-data.js`。
+- `projects/` 中的独立详情页使用各自的 HTML，修改相同项目时需要同步核对内容。
 - 全站样式位于 `assets/css/styles.css`。
 - 移动导航和进入动画位于 `assets/js/main.js`。
 - 图片位于 `assets/images/`。
 
-新增项目时，复制一个现有项目页并修改标题、正文与链接，再在首页 `#work` 区域增加入口。
+新增实习或项目时，在 `content/portfolio-data.js` 对应数组中增加条目。文件末尾有注释模板；新增内容需要有真实依据，并按 `assets/js/content-model.js` 中的章节顺序填写。
 
 ## 部署到 GitHub Pages
 

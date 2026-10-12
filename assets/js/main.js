@@ -198,6 +198,21 @@
     appendTextElement(header, "p", entry.subtitle, "detail-subtitle");
     if (entry.status) appendTextElement(header, "p", entry.status, "status-label");
 
+    if (Array.isArray(entry.links) && entry.links.length) {
+      const actions = document.createElement("div");
+      actions.className = "detail-actions";
+      entry.links.forEach((link) => {
+        if (!link || !link.label || !/^https:\/\//i.test(link.href || "")) return;
+        const anchor = document.createElement("a");
+        anchor.href = link.href;
+        anchor.target = "_blank";
+        anchor.rel = "noopener noreferrer";
+        anchor.textContent = link.label;
+        actions.append(anchor);
+      });
+      if (actions.childElementCount) header.append(actions);
+    }
+
     const metadata = document.createElement("dl");
     metadata.className = "entry-meta";
     (Array.isArray(entry.meta) ? entry.meta : []).forEach((item) => {

@@ -25,6 +25,14 @@
         if (!Array.isArray(entry.sections) || entry.sections.length === 0) errors.push(`${prefix} sections must be non-empty`);
         if (entry.id && ids.has(entry.id)) errors.push(`${prefix} duplicate entry id: ${entry.id}`);
         if (entry.id) ids.add(entry.id);
+        if (entry.links !== undefined) {
+          if (!Array.isArray(entry.links)) errors.push(`${prefix} links must be an array`);
+          else entry.links.forEach((link, linkIndex) => {
+            if (!link || !link.label || !/^https:\/\//i.test(link.href || "")) {
+              errors.push(`${prefix}.links[${linkIndex}] needs a label and HTTPS URL`);
+            }
+          });
+        }
         const sectionIds = new Set();
         let previous = -1;
         (Array.isArray(entry.sections) ? entry.sections : []).forEach((section, sectionIndex) => {
