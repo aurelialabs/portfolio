@@ -12,7 +12,7 @@ window.PORTFOLIO_DATA = {
     city: "上海",
     email: "13548674215@163.com",
     phone: "13548674215",
-    portrait: "assets/images/portrait.jpg"
+    portrait: "assets/images/portrait-2026.jpg"
   },
   internships: [{
     id: "smartcs",
