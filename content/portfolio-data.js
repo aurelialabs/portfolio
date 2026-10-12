@@ -2,7 +2,10 @@
 window.PORTFOLIO_DATA = {
   profile: {
     name: "肖依婷",
-    targetRole: "AI 产品经理实习｜大模型应用 · 通用大模型",
+    targetRole: "应聘 AI 产品经理实习｜大模型应用 / 通用大模型",
+    summary: "负责上海淘课 SmartCS 智能客服的搭建与优化；个人项目「知迹」已上线。",
+    internshipSummary: "负责企业培训客服，解决平台问答、找课和找讲师等问题。",
+    projectSummary: "学习者按单元学习；研究者查看对话和学习记录。",
     school: "南京师范大学",
     education: "教育技术学硕士在读",
     background: "计算机人工智能",

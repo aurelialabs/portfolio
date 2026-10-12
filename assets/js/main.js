@@ -64,6 +64,9 @@
     const profile = (data && typeof data.profile === "object" && data.profile) || {};
     setText("[data-profile-name]", profile.name);
     setText("[data-profile-target-role]", profile.targetRole);
+    setText("[data-profile-summary]", profile.summary);
+    setText("[data-profile-internship-summary]", profile.internshipSummary);
+    setText("[data-profile-project-summary]", profile.projectSummary);
     setText("[data-profile-school]", profile.school);
     setText("[data-profile-education]", profile.education);
     setText("[data-profile-background]", profile.background);

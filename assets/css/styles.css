@@ -180,28 +180,20 @@ img {
 }
 
 .home-layout {
-  width: min(var(--content-width), calc(100% - 48px));
+  width: min(1120px, calc(100% - 48px));
   min-height: calc(100dvh - var(--header-height));
   margin: 0 auto;
   display: grid;
-  grid-template-areas:
-    "profile portrait"
-    "entries portrait";
-  grid-template-columns: minmax(0, 3fr) minmax(340px, 2fr);
-  grid-template-rows: minmax(0, 1fr) auto;
-  column-gap: clamp(28px, 4vw, 64px);
-  row-gap: 12px;
-  align-items: stretch;
-  padding: clamp(20px, 3vh, 32px) 0;
+  grid-template-areas: "profile portrait";
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: clamp(40px, 7vw, 110px);
+  align-items: center;
+  padding: 48px 0;
 }
 
 .home-profile {
   grid-area: profile;
   min-width: 0;
-  display: grid;
-  align-content: center;
-  gap: clamp(9px, 1.3vh, 15px);
-  padding: clamp(4px, 1vh, 12px) 0;
 }
 
 .eyebrow {
@@ -214,20 +206,75 @@ img {
 }
 
 .home-profile h1 {
-  max-width: 10ch;
-  margin: 0;
+  margin: 16px 0 0;
   color: var(--color-ink);
-  font-size: clamp(48px, 5.5vw, 82px);
-  font-weight: 850;
-  letter-spacing: -0.065em;
-  line-height: 0.98;
+  font-size: clamp(48px, 5vw, 68px);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.1;
 }
 
-.home-profile > p:not(.eyebrow) {
+.home-profile .eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.home-intro {
+  max-width: 38rem;
+  margin: 22px 0 0;
+  font-size: clamp(19px, 2vw, 24px);
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.home-credentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 0;
+  margin: 14px 0 0;
+  color: #536159;
+  font-size: 14px;
+}
+
+.home-credentials span + span::before {
+  content: "·";
+  margin: 0 10px;
+  color: #8b968d;
+}
+
+.home-evidence {
   max-width: 42rem;
+  margin-top: 36px;
+  border-top: 1px solid var(--color-line);
+}
+
+.home-evidence > div {
+  display: grid;
+  grid-template-columns: 86px minmax(0, 1fr);
+  gap: 2px 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.home-evidence span {
+  grid-row: span 2;
+  padding-top: 2px;
+  color: #66746b;
+  font-size: 13px;
+}
+
+.home-evidence strong {
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.home-evidence p {
   margin: 0;
-  color: color-mix(in srgb, var(--color-ink) 78%, var(--color-cream));
-  font-size: clamp(15px, 1.35vw, 18px);
+  color: #536159;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .content-error {
@@ -243,98 +290,67 @@ button:disabled {
   cursor: not-allowed;
 }
 
-.profile-facts {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  max-width: 42rem;
-  margin: 4px 0 0;
-}
-
-.profile-facts > div {
-  min-width: 0;
-  padding: 10px 12px;
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-sm);
-  background: var(--color-paper);
-}
-
-.profile-facts dt {
-  color: var(--color-ink);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-}
-
-.profile-facts dd {
-  min-width: 0;
-  margin: 3px 0 0;
-  font-size: 14px;
-  font-weight: 700;
-  overflow-wrap: anywhere;
-}
-
-.profile-facts a {
-  color: var(--color-ink);
-}
-
 .home-entry-actions {
-  grid-area: entries;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 12px;
-  max-width: 42rem;
-  margin-top: clamp(2px, 1vh, 10px);
+  margin-top: 26px;
 }
 
 .home-entry-actions button {
-  min-height: 84px;
-  padding: 16px 18px;
+  min-height: 44px;
+  padding: 9px 16px;
   border: 1px solid var(--color-ink);
-  border-radius: var(--radius-md);
+  border-radius: 6px;
   background: var(--color-ink);
   color: var(--color-paper);
-  font-size: 15px;
-  font-weight: 800;
-  line-height: 1.35;
-  text-align: left;
+  font-size: 14px;
+  font-weight: 700;
   cursor: pointer;
 }
 
 .home-entry-actions button:nth-child(2) {
-  border-color: var(--color-butter);
-  background: var(--color-butter);
+  background: transparent;
   color: var(--color-ink);
 }
 
 .home-entry-actions button:hover {
-  border-color: var(--color-coral);
-  background: var(--color-coral);
+  background: var(--color-mint);
   color: var(--color-ink);
-  box-shadow: var(--shadow-soft);
 }
 
-.home-entry-actions button:active {
-  box-shadow: none;
+.home-entry-actions button span {
+  margin-left: 10px;
+}
+
+.home-contact {
+  margin: 22px 0 0;
+  color: #66746b;
+  font-size: 13px;
+}
+
+.home-contact a {
+  color: var(--color-ink);
+  text-underline-offset: 3px;
 }
 
 .home-portrait {
   grid-area: portrait;
-  min-width: 0;
-  min-height: 0;
-  margin: 0;
+  width: 220px;
+  height: 275px;
+  align-self: start;
+  margin: 48px 0 0;
   overflow: hidden;
-  border-radius: var(--radius-lg) var(--radius-sm) var(--radius-lg) var(--radius-sm);
-  background: var(--color-mint);
-  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--color-line);
+  border-radius: 6px;
+  background: var(--color-paper);
 }
 
 .home-portrait img {
   width: 100%;
   height: 100%;
-  min-height: 0;
   object-fit: cover;
-  object-position: 50% 18%;
+  object-position: center 18%;
 }
 
 .workspace-view {
@@ -828,23 +844,17 @@ dialog[data-lightbox]::backdrop {
 
   .home-layout {
     min-height: 0;
-    grid-template-areas:
-      "profile"
-      "portrait"
-      "entries";
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto;
-    gap: 28px;
-    padding: 38px 0 48px;
-  }
-
-  .home-profile {
-    align-content: start;
+    grid-template-areas: "profile portrait";
+    grid-template-columns: minmax(0, 1fr) 180px;
+    gap: 32px;
+    padding: 48px 0;
   }
 
   .home-portrait {
-    aspect-ratio: 4 / 5;
-    min-height: 420px;
+    width: 180px;
+    height: 225px;
+    align-self: start;
+    margin-top: 32px;
   }
 
   .workspace {
@@ -913,30 +923,37 @@ dialog[data-lightbox]::backdrop {
   }
 
   .home-layout {
+    grid-template-areas: "profile" "portrait";
+    grid-template-columns: minmax(0, 1fr);
     gap: 24px;
     padding: 28px 0 36px;
   }
 
-  .home-profile {
-    gap: 12px;
-  }
-
   .home-profile h1 {
-    max-width: none;
-    font-size: clamp(42px, 14vw, 58px);
+    font-size: 52px;
   }
 
-  .profile-facts,
-  .home-entry-actions {
-    grid-template-columns: minmax(0, 1fr);
+  .home-intro {
+    font-size: 19px;
+  }
+
+  .home-evidence {
+    margin-top: 28px;
+  }
+
+  .home-evidence > div {
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 2px 10px;
   }
 
   .home-entry-actions button {
-    min-height: 64px;
+    flex: 1 1 145px;
   }
 
   .home-portrait {
-    min-height: 0;
+    width: 136px;
+    height: 170px;
+    margin-top: 0;
   }
 
   .detail-scroll {
