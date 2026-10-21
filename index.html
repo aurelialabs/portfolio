@@ -3,104 +3,82 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>肖依婷 | AI 产品经理实习作品集</title>
-    <meta name="description" content="肖依婷的 AI 产品经理实习作品集，关注大模型应用与通用大模型产品，展示智能客服和 AI 学习产品实践。" />
-    <meta name="theme-color" content="#10213f" />
-    <meta property="og:title" content="肖依婷 | AI 产品经理实习作品集" />
-    <meta property="og:description" content="大模型应用与通用大模型产品方向，展示智能客服和 AI 学习产品实践。" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/images/portrait-2026.jpg" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <meta name="theme-color" content="#56272c" />
+    <meta name="description" content="走进肖依婷的小房间，翻阅 AI 产品经理的实习与项目作品。" />
+    <meta property="og:title" content="肖依婷的小房间 | AI 产品经理作品集" />
+    <meta property="og:description" content="关于我、实习、项目、技能和联系方式，都藏在五幅猫咪挂画里。" />
+    <meta property="og:image" content="assets/images/room/bedroom.webp" />
+    <title>肖依婷的小房间 | AI 产品经理作品集</title>
+    <link rel="stylesheet" href="assets/css/bedroom.css" />
   </head>
   <body>
-    <div class="app-shell">
-      <a class="skip-link" href="#main">跳到主要内容</a>
-
-      <header class="site-header">
-        <nav class="nav-shell" aria-label="主导航">
-          <a class="brand" href="#home" data-home-link>
-            <span data-profile-name>肖依婷</span>
-            <small>AI 产品经理</small>
-          </a>
-          <div class="nav-links" role="group" aria-label="作品集视图">
-            <button type="button" data-view-target="home">首页</button>
-            <button type="button" data-view-target="internship">实习</button>
-            <button type="button" data-view-target="project">项目</button>
-          </div>
-        </nav>
+    <a class="skip-link" href="#gallery">跳到作品入口</a>
+    <div class="site-world">
+      <header class="site-brand">
+        <a class="fabric-title" href="#home" aria-label="依婷的小房间，返回首页">
+          <span aria-hidden="true">依</span><span aria-hidden="true">婷</span><span aria-hidden="true">的</span><span aria-hidden="true">小</span><span aria-hidden="true">房</span><span aria-hidden="true">间</span>
+        </a>
+        <p>求职意向：AI 产品经理实习｜大模型应用 / 通用大模型</p>
       </header>
 
-      <p class="visually-hidden" data-view-announcement aria-live="polite" aria-atomic="true"></p>
-
-      <main id="main">
-        <section class="view view-home" data-view="home" aria-labelledby="home-title">
-          <div class="home-layout">
-            <div class="home-profile">
-              <p class="eyebrow" data-profile-target-role>应聘 AI 产品经理实习｜大模型应用 / 通用大模型</p>
-              <h1 id="home-title" tabindex="-1" data-view-heading><span data-profile-name>肖依婷</span></h1>
-              <p class="home-intro" data-profile-summary>负责上海淘课 SmartCS 智能客服的搭建与优化；个人项目「知迹」已上线。</p>
-              <p class="home-credentials"><span data-profile-school>南京师范大学</span><span data-profile-education>教育技术学硕士在读</span><span data-profile-city>上海</span></p>
-              <p class="content-error" data-content-error role="status" hidden></p>
-              <div class="home-evidence" aria-label="代表经历">
-                <div>
-                  <span>实习经历</span>
-                  <strong>上海淘课 · SmartCS</strong>
-                  <p data-profile-internship-summary>负责企业培训客服，解决平台问答、找课和找讲师等问题。</p>
-                </div>
-                <div>
-                  <span>个人项目</span>
-                  <strong>知迹 · AI 学习平台</strong>
-                  <p data-profile-project-summary>学习者按单元学习；研究者查看对话和学习记录。</p>
-                </div>
-              </div>
-              <div class="home-entry-actions" aria-label="浏览作品">
-                <button type="button" data-entry-view="internship">看实习经历 <span aria-hidden="true">→</span></button>
-                <button type="button" data-entry-view="project">看项目作品 <span aria-hidden="true">→</span></button>
-              </div>
-              <p class="home-contact">联系我：<a data-profile-email href="mailto:13548674215@163.com">13548674215@163.com</a><span aria-hidden="true"> · </span><a data-profile-phone href="tel:13548674215">13548674215</a></p>
-            </div>
-            <figure class="home-portrait">
-              <img data-profile-portrait src="assets/images/portrait-2026.jpg" width="1176" height="1648" alt="肖依婷职业照" />
-            </figure>
-          </div>
-        </section>
-
-        <section class="view workspace-view" data-view="internship" aria-labelledby="internship-title" hidden>
-          <div class="workspace">
-            <aside class="entry-sidebar" aria-label="实习经历导航">
-              <h2 id="internship-title" tabindex="-1" data-view-heading>实习经历</h2>
-              <nav aria-label="实习经历条目">
-                <div data-entry-nav="internships" role="tablist" aria-label="实习经历条目"></div>
-              </nav>
-            </aside>
-            <article class="detail-scroll" data-detail-scroll data-entry-detail="internships" role="tabpanel" id="internships-panel" tabindex="0"></article>
-          </div>
-        </section>
-
-        <section class="view workspace-view" data-view="project" aria-labelledby="project-title" hidden>
-          <div class="workspace">
-            <aside class="entry-sidebar" aria-label="项目作品导航">
-              <h2 id="project-title" tabindex="-1" data-view-heading>项目作品</h2>
-              <nav aria-label="项目作品条目">
-                <div data-entry-nav="projects" role="tablist" aria-label="项目作品条目"></div>
-              </nav>
-            </aside>
-            <article class="detail-scroll" data-detail-scroll data-entry-detail="projects" role="tabpanel" id="projects-panel" tabindex="0"></article>
-          </div>
-        </section>
+      <main class="room-stage" id="main">
+        <div class="room-backdrop" aria-hidden="true"></div>
+        <nav class="gallery-wall" id="gallery" aria-label="小猫挂画，选择作品章节">
+          <button class="cat-frame" type="button" data-page="about" style="--tilt:-3deg">
+            <span class="frame-art"><img src="assets/images/room/cat-about.webp" alt="" /></span>
+            <span class="frame-label">关于我</span>
+          </button>
+          <button class="cat-frame" type="button" data-page="internships" style="--tilt:2deg">
+            <span class="frame-art"><img src="assets/images/room/cat-internship.webp" alt="" /></span>
+            <span class="frame-label">实习经历</span>
+          </button>
+          <button class="cat-frame" type="button" data-page="projects" style="--tilt:-2deg">
+            <span class="frame-art"><img src="assets/images/room/cat-projects.webp" alt="" /></span>
+            <span class="frame-label">项目作品</span>
+          </button>
+          <button class="cat-frame" type="button" data-page="skills" style="--tilt:3deg">
+            <span class="frame-art"><img src="assets/images/room/cat-skills.webp" alt="" /></span>
+            <span class="frame-label">技能与教育</span>
+          </button>
+          <button class="cat-frame" type="button" data-page="contact" style="--tilt:-1deg">
+            <span class="frame-art"><img src="assets/images/room/cat-contact.webp" alt="" /></span>
+            <span class="frame-label">联系我</span>
+          </button>
+        </nav>
+        <p class="room-instruction">点开一幅猫咪画，翻翻我的作品杂志 <span aria-hidden="true">↗</span></p>
+        <p class="room-caption">A LITTLE ROOM OF WORK & IDEAS · 2026</p>
       </main>
     </div>
 
-    <dialog data-lightbox aria-label="图片预览">
-      <figure>
-        <img data-lightbox-image alt="" />
-        <figcaption data-lightbox-caption></figcaption>
-      </figure>
-      <button type="button" data-lightbox-close>关闭图片预览</button>
+    <dialog class="magazine-dialog" id="magazine" aria-label="肖依婷的作品杂志">
+      <div class="magazine-shell">
+        <header class="magazine-toolbar">
+          <button class="back-to-room" type="button" data-close-magazine>← 回到房间</button>
+          <span class="magazine-mark">YITING'S JOURNAL</span>
+          <span class="page-count" data-page-count></span>
+        </header>
+        <div class="magazine-layout">
+          <nav class="chapter-tabs" aria-label="杂志章节">
+            <button type="button" data-page="about">关于我</button>
+            <button type="button" data-page="internships">实习</button>
+            <button type="button" data-page="projects">项目</button>
+            <button type="button" data-page="skills">技能</button>
+            <button type="button" data-page="contact">联系</button>
+          </nav>
+          <div class="book">
+            <div class="book-spine" aria-hidden="true"></div>
+            <article class="paper-page" data-paper-page tabindex="-1"></article>
+          </div>
+        </div>
+        <footer class="magazine-footer">
+          <button type="button" data-prev-page aria-label="上一页">← 上一页</button>
+          <span data-page-title></span>
+          <button type="button" data-next-page aria-label="下一页">下一页 →</button>
+        </footer>
+      </div>
     </dialog>
 
     <script src="content/portfolio-data.js"></script>
-    <script src="assets/js/content-model.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/bedroom.js"></script>
   </body>
 </html>

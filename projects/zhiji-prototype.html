@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>知迹 · 学习路径交互示意</title>
+    <style>
+      :root { color-scheme: light; font-family: "PingFang SC", "Microsoft YaHei", Arial, sans-serif; }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: #f7f8f7; color: #243743; }
+      button, input { font: inherit; }
+      button { cursor: pointer; }
+      button:focus-visible, input:focus-visible { outline: 2px solid #2b7186; outline-offset: 2px; }
+      .shell { max-width: 780px; min-height: 100vh; margin: auto; padding: 20px; }
+      header { display: flex; justify-content: space-between; gap: 10px; align-items: center; }
+      .brand { color: #285d6f; font-weight: 800; font-size: 19px; }
+      .demo-tag { padding: 5px 8px; border-radius: 99px; background: #e7ecea; color: #607377; font-size: 11px; }
+      h1 { margin: 23px 0 8px; font-size: 24px; }
+      .sub { margin: 0 0 18px; color: #61727b; font-size: 13px; line-height: 1.6; }
+      .tabs { display: flex; gap: 8px; margin: 0 0 18px; }
+      .tabs button { padding: 8px 13px; border: 1px solid #c5d6d6; border-radius: 8px; background: white; color: #2b5260; }
+      .tabs button[aria-selected="true"] { border-color: #2b7186; background: #2b7186; color: white; }
+      .card { padding: 18px; border: 1px solid #d7e1df; border-radius: 13px; background: white; box-shadow: 0 5px 18px rgba(32, 69, 73, .07); }
+      .card h2 { margin: 0 0 10px; font-size: 17px; }
+      .card p { margin: 0 0 13px; color: #536970; font-size: 13px; line-height: 1.65; }
+      label { display: block; margin-bottom: 7px; font-size: 12px; font-weight: 700; }
+      input { width: 100%; padding: 10px 12px; border: 1px solid #c5d6d6; border-radius: 7px; }
+      .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 13px; }
+      .actions button, .choice { padding: 9px 12px; border: 1px solid #2b7186; border-radius: 7px; background: #2b7186; color: white; }
+      .actions button.secondary, .choice { background: white; color: #2b7186; }
+      .choice[aria-pressed="true"] { background: #d9eeee; }
+      .steps { display: flex; gap: 4px; margin-bottom: 12px; }
+      .steps span { flex: 1; height: 5px; border-radius: 99px; background: #dbe6e4; }
+      .steps span.active { background: #2b7186; }
+      .note { margin-top: 14px; color: #728389; font-size: 11px; line-height: 1.5; }
+      [hidden] { display: none !important; }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header><span class="brand">知迹 Zhiji</span><span class="demo-tag">本地交互示意 · 非真实模型回复</span></header>
+      <h1>今天想怎么学？</h1>
+      <p class="sub">这里演示产品的入口与学习流程。线上版本可通过作品页的按钮单独打开。</p>
+      <div class="tabs" role="tablist" aria-label="学习模式">
+        <button type="button" role="tab" aria-selected="true" data-mode="quick">直接问答</button>
+        <button type="button" role="tab" aria-selected="false" data-mode="guided">系统学习</button>
+      </div>
+      <section class="card" data-panel="quick">
+        <h2>直接问答</h2>
+        <p>适合先解决一个具体问题，不会自动进入测评或学习计划。</p>
+        <label for="quick-question">输入一个问题</label>
+        <input id="quick-question" placeholder="例如：什么是迁移学习？" />
+        <div class="actions"><button type="button" data-quick-submit>发送问题</button></div>
+        <p class="note" data-quick-note>此示意页面不调用模型，也不会保存输入。</p>
+      </section>
+      <section class="card" data-panel="guided" hidden>
+        <div class="steps" aria-hidden="true"><span class="active"></span><span></span><span></span><span></span></div>
+        <h2 data-step-title>01 · 确认学习目标</h2>
+        <p data-step-copy>告诉知迹你想学什么；确认目标后再进入诊断。</p>
+        <div data-step-input>
+          <label for="learning-goal">学习目标</label>
+          <input id="learning-goal" placeholder="例如：理解迁移学习的基本概念" />
+        </div>
+        <div data-step-choice hidden>
+          <p>示例诊断：你对这个主题的熟悉程度是？</p>
+          <div class="actions"><button class="choice" type="button" aria-pressed="false">刚接触</button><button class="choice" type="button" aria-pressed="false">了解一些</button><button class="choice" type="button" aria-pressed="false">比较熟悉</button></div>
+        </div>
+        <div class="actions"><button type="button" class="secondary" data-step-prev hidden>上一步</button><button type="button" data-step-next>确认目标</button></div>
+        <p class="note">此处只展示交互结构；实际诊断、教学和反馈以线上系统为准。</p>
+      </section>
+    </div>
+    <script>
+      (function () {
+        const modes = document.querySelectorAll("[data-mode]");
+        const panels = document.querySelectorAll("[data-panel]");
+        const titles = ["01 · 确认学习目标", "02 · 初始诊断", "03 · 学习计划", "04 · 微教学与反馈"];
+        const copies = [
+          "告诉知迹你想学什么；确认目标后再进入诊断。",
+          "通过几个问题记录当前基础与自信度。",
+          "依据目标和诊断结果安排小单元学习。",
+          "按单元学习、检测、获得反馈；关键误区会得到一次补救。"
+        ];
+        let step = 0;
+        modes.forEach(function (button) {
+          button.addEventListener("click", function () {
+            modes.forEach(function (item) { item.setAttribute("aria-selected", String(item === button)); });
+            panels.forEach(function (panel) { panel.hidden = panel.dataset.panel !== button.dataset.mode; });
+          });
+        });
+        document.querySelector("[data-quick-submit]").addEventListener("click", function () {
+          const hasQuestion = document.querySelector("#quick-question").value.trim().length > 0;
+          document.querySelector("[data-quick-note]").textContent = hasQuestion
+            ? "问题已写入输入框。此示意页面不调用模型；请从作品页打开线上版体验真实问答。"
+            : "请先输入一个问题。";
+        });
+        function renderStep() {
+          document.querySelector("[data-step-title]").textContent = titles[step];
+          document.querySelector("[data-step-copy]").textContent = copies[step];
+          document.querySelector("[data-step-input]").hidden = step !== 0;
+          document.querySelector("[data-step-choice]").hidden = step !== 1;
+          document.querySelector("[data-step-prev]").hidden = step === 0;
+          document.querySelector("[data-step-next]").textContent = step === 3 ? "重新开始" : (step === 0 ? "确认目标" : "下一步");
+          document.querySelectorAll(".steps span").forEach(function (item, index) { item.classList.toggle("active", index <= step); });
+        }
+        document.querySelector("[data-step-next]").addEventListener("click", function () {
+          if (step === 0 && !document.querySelector("#learning-goal").value.trim()) {
+            document.querySelector("#learning-goal").focus(); return;
+          }
+          step = step === 3 ? 0 : step + 1; renderStep();
+        });
+        document.querySelector("[data-step-prev]").addEventListener("click", function () { step = Math.max(0, step - 1); renderStep(); });
+        document.querySelectorAll(".choice").forEach(function (button) {
+          button.addEventListener("click", function () {
+            document.querySelectorAll(".choice").forEach(function (item) { item.setAttribute("aria-pressed", String(item === button)); });
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>

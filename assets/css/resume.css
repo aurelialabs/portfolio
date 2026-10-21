@@ -1,0 +1,92 @@
+.resume-page {
+  min-width: 320px;
+  min-height: 100dvh;
+  background: #56272c repeating-linear-gradient(90deg, transparent 0 27px, rgba(45, 18, 25, .18) 27px 37px);
+}
+
+.resume-shell {
+  width: min(1140px, calc(100% - 32px));
+  min-height: calc(100dvh - 48px);
+  margin: 24px auto;
+  border: 1px solid #b89367;
+  border-radius: 8px;
+  background: #e9dbc0;
+  box-shadow: 0 25px 70px rgba(20, 10, 9, .35);
+  overflow: hidden;
+}
+
+.resume-toolbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 18px;
+  min-height: 82px;
+  padding: 14px 24px;
+  background: #442a2b;
+  color: #f8ecd6;
+}
+
+.resume-back,
+.resume-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 8px 13px;
+  border: 1px solid rgba(251, 228, 190, .55);
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 200ms ease-out, color 200ms ease-out;
+}
+
+.resume-back { justify-self: start; }
+.resume-download { justify-self: end; background: #f1e1bd; color: #56272c; }
+.resume-back:hover { background: rgba(255, 246, 220, .14); }
+.resume-download:hover { background: #fff0ce; }
+
+.resume-toolbar-title { text-align: center; }
+.resume-toolbar-title span { font: italic 11px Georgia, serif; letter-spacing: .16em; color: #e2c9a6; }
+.resume-toolbar-title h1 { margin: 5px 0 0; font: 700 20px "Songti SC", SimSun, serif; }
+
+.resume-stage { padding: 23px clamp(15px, 4vw, 46px) 19px; }
+.resume-frame {
+  position: relative;
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 15px;
+  border: 8px solid #81523c;
+  border-radius: 8px;
+  background: #d1ad79;
+  box-shadow: inset 0 0 0 2px #f4dbaa, inset 0 0 0 6px #a57452, 5px 10px 20px rgba(62, 40, 26, .22);
+}
+
+.resume-frame-inner {
+  height: min(1050px, calc(100dvh - 218px));
+  min-height: 620px;
+  overflow: hidden;
+  border: 1px solid #c9b48f;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: inset 0 0 0 4px #f8f0df;
+}
+
+.resume-document { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+.resume-corner { position: absolute; z-index: 1; color: #f9e6ba; font-size: 16px; line-height: 1; pointer-events: none; }
+.resume-corner-top-left { top: -3px; left: 2px; }
+.resume-corner-top-right { top: -3px; right: 2px; }
+.resume-corner-bottom-left { bottom: -3px; left: 2px; }
+.resume-corner-bottom-right { bottom: -3px; right: 2px; }
+.resume-fallback { margin: 13px 0 0; color: #675549; font-size: 12px; text-align: center; }
+
+@media (max-width: 640px) {
+  .resume-shell { width: calc(100% - 12px); min-height: 0; margin: 6px auto; }
+  .resume-toolbar { grid-template-columns: 1fr auto; gap: 10px; padding: 12px; }
+  .resume-toolbar-title { grid-column: 1 / -1; grid-row: 2; }
+  .resume-back, .resume-download { padding: 7px 9px; font-size: 12px; }
+  .resume-stage { padding: 12px 9px 16px; }
+  .resume-frame { padding: 8px; border-width: 5px; }
+  .resume-frame-inner { min-height: 0; height: auto; aspect-ratio: 595 / 842; }
+}

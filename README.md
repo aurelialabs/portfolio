@@ -1,72 +1,41 @@
-# 肖依婷 AI 产品经理作品集网站
+# 肖依婷的作品集网站
 
-一个无需构建工具和后台的静态个人作品集网站。首页通过内容数据展示个人信息、实习经历与项目作品，`projects/` 目录保留三个独立详情页。
-
-## 页面
-
-- `index.html`：作品集首页
-- `content/portfolio-data.js`：首页个人信息、实习经历与项目作品的数据源
-- `projects/studyagent.html`：考途 StudyAgent 独立详情页
-- `projects/video-keypoints.html`：视频人物关键点识别
-- `projects/ai-classroom.html`：AI 长大智创课堂
+面向 AI 产品经理实习的静态作品集。首页在网站名称下说明求职意向，并通过五幅猫咪挂画打开个人信息、实习、项目、技能与教育、联系方式。内容以可翻阅的杂志呈现，电脑和手机均可使用。
 
 ## 本地预览
 
-最简单的方式是双击 `index.html`，使用浏览器打开。
-
-如需使用本地静态服务器，在仓库根目录运行：
+在项目根目录运行：
 
 ```powershell
 python -m http.server 8000
 ```
 
-然后访问：
+浏览器打开 `http://localhost:8000/`。也可以直接打开 `index.html`，但本地服务器更接近 GitHub Pages 的加载方式。
 
-```text
-http://localhost:8000
-```
+## 内容位置
 
-## 更新内容
+- `index.html`：房间、五幅挂画和杂志外壳。
+- `assets/css/bedroom.css`：卧室与杂志的布局、动画和手机适配。
+- `assets/js/bedroom.js`：页面内容、翻页、目录、截图切换和联系方式复制。
+- `content/portfolio-data.js`：已核实的个人信息、实习和项目基础资料。调整这些资料后，仍需核对杂志页中单独撰写的文字。
+- `projects/zhiji-prototype.html`：知迹学习路径的本地交互示意，明确标注为非真实模型回复。
+- `assets/images/room/`：为本版生成的卧室与小猫插画；`assets/images/projects/`：项目真实界面截图，其中知迹录屏截图使用演示账号与样例数据。
+- `assets/images/education/`：长沙学院和南京师范大学的校园照片；来源、作者和授权在“关于我”教育卡片下方可见。
+- `assets/resume/`：可下载的 2026 年 10 月版简历 PDF。
+- `projects/studyagent.html`：旧版独立项目页，目前保留供参考。
 
-- 首页结构、标题和社交分享描述位于 `index.html`；个人信息、实习和项目正文位于 `content/portfolio-data.js`。
-- `projects/` 中的独立详情页使用各自的 HTML，修改相同项目时需要同步核对内容。
-- 全站样式位于 `assets/css/styles.css`。
-- 移动导航和进入动画位于 `assets/js/main.js`。
-- 图片位于 `assets/images/`。
+## 待补素材
 
-新增实习或项目时，在 `content/portfolio-data.js` 对应数组中增加条目。文件末尾有注释模板；新增内容需要有真实依据，并按 `assets/js/content-model.js` 中的章节顺序填写。
+本地版在项目页保留了明确的素材位置，没有把示意画当作产品界面。
 
-## 部署到 GitHub Pages
+1. SmartCS：已经加入前台界面与本地场景测试结果；管理后台截图和真实业务指标仍可补充。
+2. 知迹：已经加入学习者端录屏画面与 17 题检索评测；研究者端真实截图和正式用户数据仍可补充。
+3. Yanko：已经加入线上演示画面；如有可公开的评测结果，可补充具体样本与口径。
+4. 其他社交账号：确认公开账号后，在 `assets/js/bedroom.js` 的 `contactPage()` 添加链接。原网站已有的 GitHub 账号已展示。
+5. “关于我”：高中学校与就读时间、两段教育经历的主修课程、个人性格标签还需本人确认。在 `content/portfolio-data.js` 的 `profile.about` 中填写。时间线事迹框在浏览器里可直接输入，会保存在当前浏览器；它不会自动写入网站源文件，发布前请复制文字并补进页面内容。
 
-1. 在 GitHub 新建公开仓库，例如 `portfolio`。
-2. 将 `portfolio-site` 中的全部文件上传到仓库根目录。
-3. 打开仓库 `Settings`。
-4. 进入 `Pages`。
-5. 在 `Build and deployment` 中选择 `Deploy from a branch`。
-6. 分支选择 `main`，目录选择 `/root`，然后保存。
-7. 等待 GitHub 生成公开网址。
+新增截图后，应替换 `assets/js/bedroom.js` 对应页面中的 `placeholder(...)`，并核对图片的替代文字与说明。
 
-生成的网址通常类似：
+## 发布
 
-```text
-https://你的GitHub用户名.github.io/portfolio/
-```
-
-## 部署到 Vercel
-
-1. 登录 Vercel。
-2. 选择 `Add New Project`。
-3. 导入保存网站文件的 GitHub 仓库。
-4. Framework Preset 选择 `Other`。
-5. 不填写构建命令。
-6. Output Directory 保持为空或使用仓库根目录。
-7. 点击 Deploy。
-
-## 上线前检查
-
-- 测试首页和三个项目页的站内链接。
-- 测试 StudyAgent Demo 与 GitHub。
-- 在手机端检查导航、图片和正文。
-- 确认邮箱与电话是否愿意公开。
-- 确认视频项目“90%+”的数据口径与公开权限。
-- 补充经过授权的项目图片时，务必脱敏账号、内部页面和人员信息。
+当前仓库已经通过 GitHub Pages 发布旧版网站。本次升级先在本地供审阅；确认后再提交和推送到发布分支，由现有 Pages 配置同步上线。

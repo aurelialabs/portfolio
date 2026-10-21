@@ -3,16 +3,29 @@ window.PORTFOLIO_DATA = {
   profile: {
     name: "肖依婷",
     targetRole: "应聘 AI 产品经理实习｜大模型应用 / 通用大模型",
-    summary: "负责上海淘课 SmartCS 智能客服的搭建与优化；个人项目「知迹」已上线。",
+    summary: "在上海淘课负责 SmartCS 智能客服项目；独立完成知迹与 Yanko 两个 AI 产品，关注模型理解与产品规则之间的边界。",
     internshipSummary: "负责企业培训客服，解决平台问答、找课和找讲师等问题。",
     projectSummary: "学习者按单元学习；研究者查看对话和学习记录。",
     school: "南京师范大学",
     education: "教育技术学硕士在读",
-    background: "计算机人工智能",
+    background: "长沙学院 · 计算机人工智能方向工学学士",
     city: "上海",
     email: "13548674215@163.com",
     phone: "13548674215",
-    portrait: "assets/images/portrait-2026.jpg"
+    resumeUrl: "assets/resume/肖依婷-AI产品经理-2026-10.pdf",
+    github: "https://github.com/aurelialabs",
+    portrait: "assets/images/portrait-2026.jpg",
+    about: {
+      education: [
+        { stage: "本科", school: "长沙学院", years: "2021.09—2025.06", major: "计算机人工智能方向 · 工学学士", detailLabel: "主修课程", detail: "数据挖掘与机器学习、自然语言处理、Python、移动互联网开发、模式识别等。", image: "assets/images/education/changsha-university.jpg", imageAlt: "长沙学院校园主路" },
+        { stage: "研究生", school: "南京师范大学", years: "2025.09—至今", major: "教育技术学 · 理学硕士在读", detailLabel: "研究方向", detail: "AI教育、知识建构与智能学习、人机协同学习。", image: "assets/images/education/nanjing-normal-university.jpg", imageAlt: "南京师范大学仙林校区敬文图书馆与花园" }
+      ],
+      timeline: [
+        { stage: "高中", school: "桃源一中", years: "", story: "理科，学习物理、化学、地理。" },
+        { stage: "本科", school: "长沙学院", years: "2021.09—2025.06", story: "积极参加各项比赛，曾获得数学建模的省级以及国际奖项、雷锋杯志愿大赛省级银奖，也积极参与志愿活动，志愿时长 100h+。" },
+        { stage: "研究生", school: "南京师范大学", years: "2025.09—至今", story: "研究方向：AI教育、知识建构与智能学习、人机协同学习。" }
+      ]
+    }
   },
   internships: [{
     id: "smartcs",
@@ -20,7 +33,7 @@ window.PORTFOLIO_DATA = {
     eyebrow: "AI 产品经理实习",
     title: "上海淘课 · SmartCS 智能客服",
     subtitle: "负责企业培训智能客服项目的搭建与优化，连接知识问答、课程及讲师推荐与人工服务。",
-    status: "持续优化",
+    status: "已完成",
     hidden: false,
     meta: [{ label: "时间", value: "2026.07—2026.10" }, { label: "公司", value: "上海淘课" }, { label: "岗位", value: "AI 产品经理" }, { label: "方向", value: "大模型应用 · 智能客服" }],
     sections: [
@@ -28,32 +41,14 @@ window.PORTFOLIO_DATA = {
       { id: "business", navLabel: "业务背景", title: "业务背景", blocks: [{ type: "paragraph", text: "用户会同时咨询平台政策、课程内容、讲师信息和企业内训方案。问题类型不同，需要的依据、工具与后续服务动作也不同。" }] },
       { id: "goals", navLabel: "产品目标", title: "产品目标", blocks: [{ type: "paragraph", text: "让客服先识别用户的完整目标，再选择知识问答、结构化搜索或人工服务；回答应基于可核实的知识和真实工具结果。" }] },
       { id: "work", navLabel: "个人负责", title: "项目搭建与优化", blocks: [{ type: "paragraph", text: "我负责 SmartCS 整个项目，围绕企业培训客服的真实问题推进方案设计、功能搭建、测试与迭代。" }, { type: "bullets", items: ["梳理知识问答、找课程、找讲师、闲聊与转人工等客服场景。", "围绕意图识别、多轮任务状态和条件继承，优化连续对话体验。", "结合知识库检索与结构化搜索，让客服区分解释性问题和推荐请求。", "整理无答案、无搜索结果、条件冲突等边界场景，明确澄清或人工接管方式。"] }] },
-      { id: "results", navLabel: "阶段产出", title: "阶段产出与边界", blocks: [{ type: "paragraph", text: "项目已形成可运行的智能客服系统，包含对话前台、知识库管理、推荐搜索和人工接管能力。当前作品集仅展示产品方案与功能范围，暂不使用未经核实的业务效果指标。" }] },
+      { id: "results", navLabel: "阶段产出", title: "阶段产出与边界", blocks: [{ type: "paragraph", text: "项目形成可运行的对话前台、知识库管理、推荐搜索和人工接管能力。31 个客服场景、42 轮请求的本地验收通过数由 25/31 提升至 31/31；这是预设场景的测试结果，不能解释为线上用户满意度或业务转化率。" }] },
       { id: "collaboration", navLabel: "产品判断", title: "产品判断", blocks: [{ type: "paragraph", text: "客服体验的关键在于让模型理解需求，同时让场景权限、用户明确条件和工具结果保持可控。推荐解释只能引用实际生效的筛选条件与返回内容。" }] },
       { id: "review", navLabel: "后续优化", title: "后续优化", blocks: [{ type: "paragraph", text: "继续关注知识覆盖、推荐相关性、多轮条件保持和转人工时机，并通过真实问题与失败案例推动迭代。" }] }
-    ]
-  }, {
-    id: "video-keypoints",
-    navLabel: "视频人物关键点识别",
-    eyebrow: "AI 视频处理实习",
-    title: "视频人物关键点识别",
-    subtitle: "从视频后期业务流程出发，验证人体关键点识别的应用位置与失败边界。",
-    status: "能力验证",
-    hidden: false,
-    meta: [{ label: "时间", value: "2024.04-2024.06" }, { label: "机构", value: "马栏山视频先进技术研究院" }, { label: "方向", value: "计算机视觉" }],
-    sections: [
-      { id: "overview", navLabel: "项目概览", title: "视频人物关键点识别", blocks: [{ type: "paragraph", text: "从视频后期业务流程出发，验证人体关键点识别的应用位置与失败边界。" }] },
-      { id: "business", navLabel: "业务背景", title: "业务背景", blocks: [{ type: "paragraph", text: "视频后期制作需要从大量素材中定位人物动作、筛选有效片段并完成剪辑。人工逐帧查看和标注耗时较长，素材质量、人物遮挡和多人场景也会增加处理难度。" }, { type: "paragraph", text: "项目尝试使用人体关键点识别辅助人物定位、动作识别和素材筛选，判断模型在哪些环节真正可用，以及哪些场景仍需人工处理。" }, { type: "cards", items: [{ title: "项目重点", text: "识别结果能否稳定支持视频生产流程。", tone: "green" }] }] },
-      { id: "goals", navLabel: "项目目标", title: "项目目标", blocks: [{ type: "paragraph", text: "流程拆解帮助我回答三个产品问题：模型需要什么输入，输出如何被后续环节使用，什么情况下必须回到人工处理。" }] },
-      { id: "work", navLabel: "个人贡献", title: "个人贡献与业务流程", blocks: [{ type: "paragraph", text: "项目的模型方案和整体技术结果属于团队协作成果。我的工作集中在业务流程、样本质量、测试记录与应用边界。" }, { type: "bullets", items: ["梳理视频导入、拆帧、人物识别、关键点标注与结果回传流程。", "参与视频拆帧、数据清洗、标注检查和异常样本整理。", "基于 YOLO-v7 参与人体关键点识别能力验证。", "记录遮挡、多人重叠、画面模糊和关键点漂移等 bad case。", "从产品使用角度整理模型适用条件和人工兜底场景。"] }, { type: "steps", items: [{ label: "01", title: "视频导入", text: "明确素材类型与质量" }, { label: "02", title: "视频拆帧", text: "生成连续可检查样本" }, { label: "03", title: "人物识别", text: "定位画面中的人物" }, { label: "04", title: "关键点标注", text: "输出人体姿态信息" }, { label: "05", title: "结果回传", text: "连接后续生产环节" }, { label: "06", title: "人工复核", text: "处理低置信度场景" }] }] },
-      { id: "results", navLabel: "成果", title: "成果与复盘", blocks: [{ type: "cards", items: [{ title: "90%+", text: "简历记录的测试样本关键点识别准确率，仅代表特定测试范围。", tone: "blue" }, { title: "优秀实习生", text: "项目期间获得的实习荣誉。", tone: "green" }] }, { type: "paragraph", text: "项目沉淀了数据处理流程、模型测试记录和典型 bad case，为后续模型迭代与工具化判断提供依据。" }] },
-      { id: "collaboration", navLabel: "技术协作", title: "技术协作", blocks: [{ type: "paragraph", text: "与技术同学沟通时，我关注指标背后的使用条件，而不只询问模型准确率。" }, { type: "bullets", items: ["测试样本来自哪些场景，是否覆盖真实生产条件。", "哪些失败会直接影响剪辑或素材筛选。", "模型是单帧准确，还是连续视频中保持稳定。", "问题来自数据质量、模型能力还是流程连接。", "产品落地时需要怎样的异常提示和人工复核。"] }] },
-      { id: "review", navLabel: "复盘", title: "复盘", blocks: [{ type: "paragraph", text: "如果重新推进，我会从项目开始就建立分场景测试集，将遮挡程度、人物数量、画面清晰度、景别和动作幅度作为测试维度，同时记录总体指标与关键场景指标。" }] }
     ]
   }],
   projects: [
     {
-      id: "zhiji", navLabel: "知迹 · AI 学习平台", eyebrow: "个人项目", title: "知迹（Zhiji）", subtitle: "把大模型辅助学习与可复核的过程证据连接起来，服务学习者与教育研究者。", status: "已上线 · 迭代中", hidden: false,
+      id: "zhiji", navLabel: "知迹 · AI 学习平台", eyebrow: "个人项目", title: "知迹（Zhiji）", subtitle: "让学习者按目标推进学习，也让研究者能回到原始对话复核过程。", status: "已上线 · 迭代中", hidden: false,
       links: [{ label: "体验学习者端 ↗", href: "https://8.218.22.55/learner/login" }, { label: "查看研究者端 ↗", href: "https://8.218.22.55/admin/login" }],
       meta: [{ label: "角色", value: "个人项目" }, { label: "方向", value: "大模型应用 · AI 教育" }],
       sections: [
@@ -69,6 +64,16 @@ window.PORTFOLIO_DATA = {
       ]
     },
     {
+      id: "yanko", navLabel: "Yanko · AI 陪伴与行动助手", eyebrow: "独立项目", title: "Yanko（言行）", subtitle: "聊天可以提出计划和记忆建议；是否保存，由用户决定。", status: "线上演示", hidden: false,
+      links: [{ label: "体验演示 ↗", href: "https://yanko-three.vercel.app/chat" }, { label: "查看代码 ↗", href: "https://github.com/aurelialabs/yanko" }],
+      meta: [{ label: "时间", value: "2026.09—2026.10" }, { label: "角色", value: "独立开发" }, { label: "方向", value: "AI 陪伴 · 行动助手" }],
+      sections: [
+        { id: "problem", title: "问题背景", blocks: [{ type: "paragraph", text: "通用 AI 可以聊天，但持续关系中容易出现人设漂移、记忆编造和计划误创建。用户也需要决定哪些记忆能保存、哪些行动真的要执行。" }] },
+        { id: "decision", title: "关键决策", blocks: [{ type: "paragraph", text: "把闲聊陪伴与计划落地分流：模型理解表达，产品策略判断是否进入计划流程；只有用户确认后才正式写入。记忆区分自动写入、确认写入和禁止写入，并区分用户共享与角色专属范围。" }] },
+        { id: "result", title: "当前结果", blocks: [{ type: "paragraph", text: "已完成 PRD、响应式 Web/PWA 原型、角色与记忆管理、对话式计划确认、反馈与 Badcase 记录，以及可访问的免登录演示。线上演示使用浏览器本地数据，不代表真实用户使用效果。" }] }
+      ]
+    },
+    {
       id: "studyagent", navLabel: "考途 StudyAgent", eyebrow: "Vibe Coding 项目", title: "考途 StudyAgent", subtitle: "将教材章节转化为结构化复习报告，连接理解、记忆、自测与行动计划。", status: "原型验证", hidden: false,
       meta: [{ label: "时间", value: "2026.07" }, { label: "角色", value: "独立完成" }, { label: "类型", value: "AI 教育产品" }],
       sections: [
@@ -81,21 +86,6 @@ window.PORTFOLIO_DATA = {
         { id: "test", navLabel: "测试迭代", title: "测试与迭代", blocks: [{ type: "paragraph", text: "我使用约 270KB 的真实教育学 PDF 完成一次端到端测试。Workflow 能读取材料并生成知识框架、重点和复习相关内容。" }, { type: "bullets", items: ["变量未正确插入时，模型会反问用户补充材料。", "答案节点没有引用题目时，题目与答案可能错位。", "整本教材输入过长时，输出容易泛化。", "扫描版 PDF 本质是图片，需要先 OCR。", "多节点调用会消耗模型额度，演示前需要检查可用性。"] }] },
         { id: "result", navLabel: "成果与限制", title: "成果与限制", blocks: [{ type: "cards", items: [{ title: "6", text: "套独立节点 Prompt", tone: "blue" }, { title: "1", text: "次真实 PDF 端到端测试", tone: "green" }] }, { type: "paragraph", text: "当前已完成可运行的 Dify Workflow、Web App、DSL、PRD、Prompt 文档、测试报告、迭代记录和公开 GitHub 仓库。项目仍处于原型验证阶段。" }] },
         { id: "review", navLabel: "下一步", title: "下一步", blocks: [{ type: "bullets", items: ["补充不同教材和异常输入测试。", "建立更清晰的评价维度与测试记录表。", "增加长文本分段和文件类型判断。", "根据真实反馈判断知识库、错题复盘和进度能力的优先级。"] }] }
-      ]
-    },
-    {
-      id: "ai-classroom", navLabel: "AI 长大智创课堂", eyebrow: "产品与研究实践", title: "AI 长大智创课堂", subtitle: "通过学生与家长调研、课程设计和数据分析，探索 K12 AI 编程教育产品优化。", status: "项目负责人", hidden: false,
-      meta: [{ label: "时间", value: "2022.10-2023.06" }, { label: "角色", value: "项目负责人" }, { label: "方向", value: "K12 AI 教育" }],
-      sections: [
-        { id: "overview", navLabel: "项目概览", title: "AI 长大智创课堂", blocks: [{ type: "paragraph", text: "通过学生与家长调研、课程设计和数据分析，探索 K12 AI 编程教育产品优化。" }] },
-        { id: "problem", navLabel: "项目背景", title: "项目背景", blocks: [{ type: "paragraph", text: "K12 编程教育快速发展，但不少课程存在内容同质化、学习路径固定和反馈不足的问题。学生的年龄、基础与学习动机不同，家长对课程价值和学习成果的关注也不一致。" }] },
-        { id: "goals", navLabel: "用户研究", title: "用户研究", blocks: [{ type: "paragraph", text: "我组织并参与学生与家长调研，通过问卷和访谈收集需求与课程痛点，并使用 SPSS、AHP 层次分析法辅助整理信息与判断优先级。" }] },
-        { id: "solution", navLabel: "关键判断", title: "关键判断", blocks: [{ type: "paragraph", text: "学生和家长是两个不同的产品角色。课程设计需要同时理解两类角色，但不能简单把家长诉求转化为学生的学习负担。" }] },
-        { id: "ai-choice", navLabel: "课程优化", title: "课程产品优化", blocks: [{ type: "paragraph", text: "基于调研结果，我参与课程体系优化，并设计与迭代 20+ 少儿编程课程内容，将用户需求转化为课程结构和学习任务。" }] },
-        { id: "build", navLabel: "项目推进", title: "项目推进", blocks: [{ type: "bullets", items: ["调研阶段：研究问题、问卷、访谈记录与需求结论。", "方案阶段：课程结构、内容方向与优先级。", "制作阶段：课程内容、体验记录与修改意见。", "申报阶段：研究报告、项目材料与成果证明。", "展示阶段：路演逻辑、PPT 与答辩准备。"] }] },
-        { id: "test", navLabel: "项目成果", title: "项目成果", blocks: [{ type: "cards", items: [{ title: "20+", text: "少儿编程课程内容设计与迭代", tone: "blue" }, { title: "银奖", text: "湖南省“雷锋杯”志愿服务大赛团队成果", tone: "green" }] }] },
-        { id: "result", navLabel: "交付结果", title: "项目结果", blocks: [{ type: "bullets", items: ["输出用户研究、课程优化方案、研究报告和项目申报材料。", "作为主要负责人参与国家级项目申报。", "团队入选团中央“七彩假期”志愿团队。", "团队相关实践成果获得多家媒体报道。"] }] },
-        { id: "review", navLabel: "复盘", title: "复盘", blocks: [{ type: "paragraph", text: "这段经历让我建立了多角色产品意识，也理解教育产品需要同时关注学习效果与用户体验。" }] }
       ]
     }
   ]

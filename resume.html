@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#56272c" />
+    <meta name="description" content="查看肖依婷的 AI 产品经理实习简历。" />
+    <title>查看简历 | 肖依婷的小房间</title>
+    <link rel="stylesheet" href="assets/css/bedroom.css" />
+    <link rel="stylesheet" href="assets/css/resume.css" />
+  </head>
+  <body class="resume-page">
+    <main class="resume-shell">
+      <header class="resume-toolbar">
+        <a class="resume-back" href="index.html#home">← 返回作品集</a>
+        <div class="resume-toolbar-title">
+          <span>YITING'S JOURNAL · RESUME</span>
+          <h1>肖依婷的简历</h1>
+        </div>
+        <a class="resume-download" href="assets/resume/肖依婷-AI产品经理-2026-10.pdf" download="肖依婷-AI产品经理-简历.pdf">下载简历 ↓</a>
+      </header>
+
+      <section class="resume-stage" aria-label="简历预览">
+        <div class="resume-frame">
+          <span class="resume-corner resume-corner-top-left" aria-hidden="true">✦</span>
+          <span class="resume-corner resume-corner-top-right" aria-hidden="true">✦</span>
+          <span class="resume-corner resume-corner-bottom-left" aria-hidden="true">✦</span>
+          <span class="resume-corner resume-corner-bottom-right" aria-hidden="true">✦</span>
+          <div class="resume-frame-inner">
+            <iframe
+              class="resume-document"
+              src="assets/resume/肖依婷-AI产品经理-2026-10.pdf#toolbar=0&navpanes=0&view=Fit"
+              title="肖依婷 AI 产品经理简历 PDF 预览"
+            ></iframe>
+          </div>
+        </div>
+        <p class="resume-fallback">若浏览器未显示预览，可使用右上角的“下载简历”按钮查看 PDF。</p>
+      </section>
+    </main>
+    <script>
+      const resumeSource = new URLSearchParams(window.location.search).get("from");
+      const returnPages = { about: "关于我", contact: "联系我" };
+      if (Object.prototype.hasOwnProperty.call(returnPages, resumeSource)) {
+        const backLink = document.querySelector(".resume-back");
+        backLink.href = "index.html#" + resumeSource;
+        backLink.textContent = "← 返回" + returnPages[resumeSource];
+      }
+    </script>
+  </body>
+</html>
