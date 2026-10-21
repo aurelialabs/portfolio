@@ -183,15 +183,15 @@
       tags: ["专家检索", "偏好排序", "资源路由"]
     },
     {
-      id: "recovery", tab: "无结果恢复", image: "",
-      alt: "SmartCS 无结果恢复实景截图待补充", category: "无结果恢复", title: "为搜索失败设计恢复路径",
+      id: "recovery", tab: "无结果恢复", image: "assets/images/projects/smartcs/showcase-no-result-recovery.png",
+      alt: "SmartCS 无结果时提示调整筛选条件后再查的界面", category: "无结果恢复", title: "为搜索失败设计恢复路径",
       value: "没有结果，也不会让用户走进死胡同",
       description: "当筛选条件过严导致无结果时，系统不会擅自删除用户的预算、地区或课程类型，而是根据可调整条件给出恢复方案，并在用户确认后再放宽条件，保证搜索过程始终可解释、可恢复。",
       tags: ["零结果恢复", "条件保护", "用户确认"]
     },
     {
       id: "knowledge", tab: "知识问答", image: "assets/images/projects/smartcs/showcase-knowledge-handoff.png",
-      alt: "SmartCS 知识依据不足时提示人工接管的对话界面", category: "知识问答", title: "统一处理搜索、咨询与服务问题",
+      alt: "SmartCS 回答淘课网和培训宝区别的知识问答界面", category: "知识问答", title: "统一处理搜索、咨询与服务问题",
       value: "不只是推荐课程，也是完整的智能客服入口",
       description: "SmartCS 会先判断用户当前是在寻找培训资源、咨询平台知识，还是处理售后问题，再进入对应业务链路。系统可基于知识库回答注册、课程类型、购买流程等常见问题，涉及退款、支付异常等场景时则进入人工服务流程。",
       tags: ["意图路由", "RAG知识库", "人工接管"]
@@ -201,7 +201,7 @@
   function smartcsShowcase() {
     const first = smartcsShowcaseItems[0];
     return '<section class="product-showcase" aria-labelledby="smartcs-showcase-title">' +
-      '<div class="product-showcase-heading"><h2 id="smartcs-showcase-title">产品实景</h2><p>五个核心场景 · 实景来自本地验收，无结果恢复截图待补</p></div>' +
+      '<div class="product-showcase-heading"><h2 id="smartcs-showcase-title">产品实景</h2><p>五个核心场景 · 实景来自本地验收</p></div>' +
       '<div class="product-showcase-body"><div class="showcase-preview">' +
         '<div class="showcase-media"><img data-smartcs-image src="' + esc(first.image) + '" alt="' + esc(first.alt) + '">' +
           '<div class="showcase-image-pending" data-smartcs-image-pending role="img" aria-label="无结果恢复界面截图待补充" hidden>无结果恢复<br>实景截图待补充</div></div>' +
@@ -340,9 +340,10 @@
       smartcsCase.requests.map(function (item) {
         return '<li class="smartcs-request"><q>' + esc(item.text) + '</q><span>' + esc(item.path) + '</span></li>';
       }).join("") + '</ul></div>';
-    const body = '<div class="smartcs-background"><p class="smartcs-lead">淘课网的咨询同时涉及平台政策、课程与讲师搜索、企业定制和售后服务。用户往往用一句自然语言提出需求，但不同问题需要的依据与后续动作并不一样。SmartCS 要先判断用户想得到解释、推荐，还是人工帮助，再进入对应的服务路径。</p>' +
+    const body = '<div class="smartcs-background"><div class="smartcs-background-row"><p class="smartcs-lead">淘课网的咨询同时涉及平台政策、课程与讲师搜索、企业定制和售后服务。用户往往用一句自然语言提出需求，但不同问题需要的依据与后续动作并不一样。SmartCS 要先判断用户想得到解释、推荐，还是人工帮助，再进入对应的服务路径。</p>' +
+      '<span class="smartcs-background-arrow" aria-hidden="true"><b class="smartcs-arrow-right">→</b><b class="smartcs-arrow-down">↓</b></span>' +
       requests +
-      '<p class="smartcs-duty"><strong>我负责什么</strong>负责场景边界、应答规则、跨轮条件、联调验收与 badcase 迭代，并对接算法、研发和客服运营。</p></div>';
+      '</div><p class="smartcs-duty"><strong>我负责什么</strong>负责场景边界、应答规则、跨轮条件、联调验收与 badcase 迭代，并对接算法、研发和客服运营。</p></div>';
     return smartcsChapter("smartcs-case-01", "01", "背景介绍", "同一个客服入口，承接不同任务", "", body);
   }
 
