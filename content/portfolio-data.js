@@ -64,7 +64,7 @@ window.PORTFOLIO_DATA = {
       ]
     },
     {
-      id: "yanko", navLabel: "Yanko · AI 陪伴与行动助手", eyebrow: "独立项目", title: "Yanko（言行）", subtitle: "聊天可以提出计划和记忆建议；是否保存，由用户决定。", status: "线上演示", hidden: false,
+      id: "yanko", navLabel: "Yanko 言行｜AI陪伴助手", eyebrow: "独立项目", title: "Yanko 言行｜AI陪伴助手", subtitle: "你的专属AI陪伴助手，人设由你打造，不仅是你的专属陪伴，还是你的生活管家。让生活更加美好~", status: "Demo 已上线", hidden: false,
       links: [{ label: "体验演示 ↗", href: "https://yanko-three.vercel.app/chat" }, { label: "查看代码 ↗", href: "https://github.com/aurelialabs/yanko" }],
       meta: [{ label: "时间", value: "2026.09—2026.10" }, { label: "角色", value: "独立开发" }, { label: "方向", value: "AI 陪伴 · 行动助手" }],
       sections: [

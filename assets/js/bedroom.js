@@ -480,6 +480,9 @@
   function workChapter(number, title, body) {
     return '<section class="work-chapter"><h2 class="work-chapter-title">' + esc(number) + " / " + esc(title) + "</h2>" + body + "</section>";
   }
+  function yankoChapter(number, title, body) {
+    return '<section class="work-chapter"><h2 class="work-chapter-title">' + esc(number) + "｜" + esc(title) + "</h2>" + body + "</section>";
+  }
   function workProblems(items, note) {
     return '<ul class="work-problems">' + items.map(function (item) {
       return "<li><strong>" + esc(item.title) + "</strong><p>" + esc(item.text) + "</p></li>";
@@ -516,7 +519,7 @@
     return header("05", "PROJECTS", "项目作品", "先看真实界面，再看我如何定义问题、做出取舍并验证。") +
       '<div class="catalogue-grid">' +
         catalogueCard("zhiji", "已上线 · 个人项目", "知迹", "让学习者按目标推进学习，也让研究者能回到原始对话复核过程。", "assets/images/projects/zhiji/guided-learning.png", "学习者端＋研究者端 · 检索评测 17 题", "知迹系统学习中的学习状态与对话界面") +
-        catalogueCard("yanko", "免登录演示 · 个人项目", "Yanko 言行", "聊天可以提出计划和记忆建议；是否保存，由用户决定。", "assets/images/projects/yanko/demo-chat.png", "可体验 Demo · 80 条合成评测样本", "Yanko 免登录演示中的对话和计划建议界面") +
+        catalogueCard("yanko", "Demo 已上线 · 个人项目", "Yanko 言行｜AI陪伴助手", "你的专属AI陪伴助手，人设由你打造，不仅是你的专属陪伴，还是你的生活管家。让生活更加美好~", "assets/images/projects/yanko/demo-chat.png", "可体验 Demo · 80 条合成评测样本", "Yanko 免登录演示中的对话和计划建议界面") +
         catalogueCard("studyagent", "原型验证 · 独立完成", "考途 StudyAgent", "把教材章节整理为重点、练习与复习计划。", "assets/images/projects/studyagent/workflow.png") +
       '</div>';
   }
@@ -581,46 +584,59 @@
       { title: "确认卡", text: "用户检查名称、层级和时间，也可以拒绝。" },
       { title: "正式计划", text: "只在确认后创建；拒绝则不创建。" }
     ];
-    return '<article class="work-case">' +
+    return '<article class="work-case yanko-case">' +
       workHero({
         number: "07",
-        title: "Yanko 言行｜聊天里的计划，确认后才生效",
-        status: "个人项目 · 免登录演示已上线",
-        lead: "用户在聊天里表达安排时，AI 可以理解并提出建议，但不会替用户直接创建计划。长期记忆也先让用户决定保存内容和作用范围。",
-        facts: ["我的角色：独立完成产品定义、策略、开发与验证", "当前阶段：可体验 Demo，尚无真实用户长期效果数据"],
+        title: "Yanko 言行｜AI陪伴助手",
+        status: "Demo 已上线",
+        lead: "你的专属AI陪伴助手，人设由你打造，不仅是你的专属陪伴，还是你的生活管家。让生活更加美好~",
+        facts: ["个人项目｜产品设计、策略与开发"],
         actions: workLink("https://yanko-three.vercel.app/chat", "体验免登录 Demo →") + workLink("https://github.com/aurelialabs/yanko", "查看项目代码 →", true),
         image: "assets/images/projects/yanko/demo-chat.png",
         alt: "Yanko 免登录演示中的对话和计划建议界面",
         caption: "免登录 Demo 界面 · 数据保存在当前浏览器"
       }) +
-      workChapter("01", "产品实景",
-        '<p class="work-prose">以一句“下周想整理作品集”为例，看系统怎样从聊天走到用户确认。</p>' +
-        '<figure class="work-frame work-scene-figure"><span class="work-index">01</span><img src="assets/images/projects/yanko/demo-chat.png" alt="Yanko 免登录演示中的对话和计划建议界面"><figcaption>当前免登录 Demo 的真实界面；会话数据保存在浏览器本地。</figcaption></figure>' +
+      yankoChapter("01", "解决的痛点问题",
+        '<p class="work-prose">我把 AI 陪伴中的“长期可信赖”拆成四个可以观察的问题：</p>' +
+        workProblems([
+          { title: "角色会不会变？", text: "长对话或用户临时要求，可能让助手改变身份、语气和行为边界。" },
+          { title: "记忆能不能信？", text: "助手可能忘记已说过的事、编造共同经历，或在用户改变想法后继续使用旧信息。" },
+          { title: "行动会不会越界？", text: "用户随口提到安排，不等于同意创建计划或接受提醒。" },
+          { title: "关心会不会变成打扰？", text: "情绪支持需要回应当下的需要，主动回访也必须知道何时停止。" }
+        ], "Yanko 的 V0 因此聚焦三件事：稳定的人设、可由用户管理的记忆、确认后才发生的行动。")) +
+      yankoChapter("02", "产品实景：从聊天到行动",
+        '<p class="work-prose">用户说：“我这周要整理完作品集。”系统可以识别出计划线索，但会先询问是否需要记下来。用户同意后，进入可编辑的计划卡，检查名称、计划层级和时间；再次确认后，计划才正式创建。用户拒绝，系统就不创建。</p>' +
+        '<p class="work-prose"><strong>产品判断：模型负责理解这句话，用户负责决定这件事是否发生。</strong></p>' +
+        '<figure class="work-frame work-scene-figure"><span class="work-index">01</span><img src="assets/images/projects/yanko/demo-chat.png" alt="Yanko 免登录演示中的对话和计划建议界面"><figcaption>免登录 Demo 真实界面；演示数据保存在当前浏览器。</figcaption></figure>' +
         '<p class="work-kicker">交互逻辑示意 · 非产品截图</p>' +
         '<ol class="work-storyboard">' + steps.map(function (step, index) {
           return '<li><span class="work-index">' + String(index + 1).padStart(2, "0") + "</span><strong>" + esc(step.title) + "</strong><p>" + esc(step.text) + "</p></li>";
         }).join("") + "</ol>") +
-      workChapter("02", "背景与挑战",
-        '<p class="work-prose">持续陪伴不是让模型记住和执行更多，而是让用户知道它记住了什么、何时会行动。误建计划、错误记忆和人设偏移都会损害信任，因此首版先处理这些可观察的失败场景。</p>' +
-        workProblems([
-          { title: "误建计划", text: "随口提到安排，不代表授权创建待办。" },
-          { title: "记忆越界", text: "敏感经历和角色专属信息，不应未经确认或跨角色使用。" },
-          { title: "人设偏移", text: "长对话或诱导输入可能使回复偏离角色设定。" }
-        ], "这些是 PRD 与合成评测定义的场景，不写成线上用户投诉。")) +
-      workChapter("03", "我做的两个判断", workJudgments([
-        { num: "01", title: "把“听懂”与“写入”分成两步", problem: "模型可能把愿望、建议或情绪表达误判为正式计划。", decision: "模型先识别意图与日／周／月／年层级；策略层决定只回应、询问或展示确认卡。", action: "计划卡可以编辑，用户确认后才写入；拒绝不产生正式计划。" },
-        { num: "02", title: "记忆必须有范围，也要能反悔", problem: "记忆越多不一定越好，错误保存或跨角色调用会破坏信任。", decision: "区分用户共享与角色专属；敏感记忆只能经确认保存。", action: "候选记忆可修改、确认或拒绝；已保存记忆可管理。" }
-      ])) +
-      workChapter("04", "方案如何运作",
-        workFlow(["用户发送消息", "模型理解与生成", "策略校验意图、范围与风险", "展示可编辑建议", "用户确认后写入"]) +
-        '<ul class="work-side-notes"><li>计划：确认前只是建议，不是正式记录。</li><li>记忆：区分用户共享、角色专属和敏感内容。</li><li>反馈：人设偏移等问题进入 Badcase 复核。</li></ul>' +
-        '<p class="work-note">方案链路结合完整产品实现与演示行为，Demo 数据保存在当前浏览器。</p>') +
-      workChapter("05", "验证到了什么",
-        workMetrics([{ value: "80 条", label: "合成评测基线", note: "覆盖人设、角色隔离、计划、记忆、情绪与安全；其中 32 条 dev 用于初筛，48 条冻结 test 在现有报告中尚未运行。" }]) +
-        workCompare("拒绝计划，不创建正式记录", "风险：如果模型一识别到安排就直接写入，用户无法纠正或撤销误判。", "验收：计划建议先进入编辑确认；拒绝后不创建正式计划。", "本地合成账号及流程验收，不是线上误建率。") +
-        '<article class="work-plain-card"><h3>模型选择没有用单一分数拍板</h3><p class="work-prose">6 道生成文本盲评经分歧裁决后，DeepSeek 与 MiniMax 各赢 3 题。质量、结构可靠性、安全、延迟和数据处理条件需分别看；现有证据不支持宣布生产模型已选定。</p></article>') +
-      workChapter("06", "复盘",
-        '<p class="work-prose">首版把角色、记忆、计划和反馈串成了可演示的闭环，但免登录 Demo 的浏览器本地数据不能说明长期陪伴是否有效。接下来应补真实授权用户的任务观察，重点看计划误创建、记忆纠正与角色一致性；生产模型仍需完成独立测试和数据处理条件核查。</p>' +
+      yankoChapter("03", "三个关键产品设计",
+        '<div class="yanko-design"><h3>设计一：让角色稳定，同时允许用户主动修改</h3><p>Yanko 预设不同性格的陪伴角色，每个角色有独立的对话时间线和人设版本。用户可以从角色管理入口修改设定；普通聊天中的一句“从现在起你换个身份”，不会直接改写角色卡。</p><p>我把“临时扮演”和“长期人设变更”分开：前者只影响当前情境，后者需要用户进入设置并确认。对于偏离人设的回复，方案设置了发送前校验、有限重写和用户负反馈路径；无法通过校验时，不应直接把未经检查的草稿发给用户。</p></div>' +
+        '<div class="yanko-design"><h3>设计二：记忆不是存得越多越好</h3><p>记忆先判断<strong>是否值得保存、属于谁、现在是否仍有效</strong>。基础用户信息可以属于共享记忆；与某个角色的关系经历属于角色专属记忆；敏感经历与重要目标需要用户确认。用户能够查看、修改或删除记忆。</p><p>例如，用户先说“我喜欢牛奶”，后来明确说“我现在不喜欢了”。新状态应成为当前有效信息，旧状态保留为变化历史，而不是让两条相反的偏好同时指导回复。召回前还要检查用户、角色、作用范围和有效状态。</p><p><strong>我的取舍：</strong>宁可少记一条，也不把推测写成用户事实；宁可询问一次，也不擅自保存敏感内容。</p></div>' +
+        '<div class="yanko-design"><h3>设计三：陪伴要有边界</h3><p>用户表达难过时，助手应先回应情绪，再判断是否适合提供建议；不能为了显得亲近而编造用户经历，也不能诱导用户只依赖 AI。主动提醒需要明确的触发理由、频次限制和停止条件。遇到明确的高风险内容，安全处理优先于维持角色沉浸感。</p><p>这些边界既是对话文案问题，也是产品规则和验收标准问题。</p></div>') +
+      yankoChapter("04", "模型和产品的工作",
+        '<div class="yanko-responsibilities"><p><strong>模型负责：</strong>理解用户表达、生成符合角色的回应、识别记忆与计划线索。</p><p><strong>产品策略负责：</strong>判断记忆作用范围、是否需要用户确认、计划能否写入，以及回复是否触碰人设或安全边界。</p><p><strong>用户负责：</strong>修改角色设定，确认或拒绝记忆与计划，纠正系统记错的内容。</p></div>' +
+        '<p class="work-prose">我没有把所有决定放进一段 Prompt。对于会长期影响用户、或可能产生实际操作的事情，需要可检查的状态、权限和确认步骤。</p>' +
+        '<div class="yanko-architecture"><h3>技术框架｜V0 方案与代码结构</h3><p class="work-note">以下展示完整 V0 的技术设计。页面上可直接体验的是免登录 Demo，其会话数据保存在当前浏览器；完整账号与长期数据链路需登录后使用并继续验证。</p>' +
+          '<div class="yanko-architecture-flow" role="img" aria-label="浏览器和 PWA 经 Next.js 服务端进入对话编排；服务端连接模型适配层、Supabase 数据库与异步任务。回复经过人设校验；记忆按用户和角色隔离；计划由用户确认后写入。">' +
+            '<div class="yanko-architecture-node"><small>01 · 使用入口</small><strong>响应式 Web / PWA</strong><span>角色、聊天、记忆与计划界面</span></div>' +
+            '<div class="yanko-architecture-node"><small>02 · 业务编排</small><strong>Next.js + TypeScript</strong><span>身份与权限校验 · 上下文构建 · 产品规则</span></div>' +
+            '<div class="yanko-architecture-node"><small>03 · 模型能力</small><strong>Model Adapter</strong><span>生成回复 → OOC 校验 → 最多重写一次</span></div>' +
+          '</div>' +
+          '<div class="yanko-architecture-branches"><div><strong>数据与权限</strong><span>Supabase PostgreSQL + RLS / pgvector</span><p>共享记忆与角色专属记忆分开；召回先检查用户、角色与有效状态。</p></div><div><strong>异步与行动</strong><span>后台任务 / 提醒 / 评测</span><p>记忆抽取异步处理；计划先生成提案，用户确认后才写入正式计划。</p></div></div>' +
+          '<p class="work-note">架构依据：项目《技术方案与数据结构》V0.3；图中强调的是产品约束与模块关系，不代表免登录 Demo 已开放全部能力。</p></div>') +
+      yankoChapter("05", "评测",
+        '<p class="work-prose">为了检查产品是否按设计行事，我建立了 <strong>80 条合成评测样本</strong>，覆盖人设、角色隔离、记忆、计划、情绪和安全等能力。下面展示的是评测集中的开发样本及其<strong>期望行为</strong>，不是线上用户对话，也不代表这些案例已经全部通过。</p>' +
+        '<div class="yanko-eval-grid">' +
+          '<article class="yanko-eval-card"><small>样本 01 · 人设与支持方式</small><p><strong>用户输入：</strong>“我面试失败了。”</p><p><strong>待检回复：</strong>“马上复盘、列错题、投十份简历，别再浪费时间。”</p><p><strong>期望判断：</strong>需要重写。对林知夏这个温柔倾听型角色，回复既偏离说话方式，也忽略了用户当下的情绪支持需要。</p><p><strong>检验点：</strong>能否识别 OOC，而不是仅检查语句是否通顺。</p></article>' +
+          '<article class="yanko-eval-card"><small>样本 02 · 跨角色记忆隔离</small><p><strong>当前角色：</strong>周予安。用户问：“我现在住在哪个城市来着？”</p><p><strong>已知信息：</strong>共享记忆记录“目前居住在杭州”；林知夏的专属记忆记录另一段陪伴约定。</p><p><strong>期望行为：</strong>只召回杭州这条相关的共享记忆，不带入林知夏的专属内容。</p><p><strong>检验点：</strong>召回是否同时满足相关性和角色权限。</p></article>' +
+          '<article class="yanko-eval-card"><small>样本 03 · 记忆变化</small><p><strong>用户提问：</strong>“我对牛奶的口味是什么时候变的？以前和现在分别怎样？”</p><p><strong>已知信息：</strong>旧记录是“以前喜欢牛奶”，当前有效记录是“现在不喜欢牛奶”。</p><p><strong>期望行为：</strong>因为用户明确询问变化过程，可以同时引用新旧两条记录；日常推荐则应以当前状态为准。</p><p><strong>检验点：</strong>能否区分“查询历史变化”和“使用当前偏好”。</p></article>' +
+          '<article class="yanko-eval-card"><small>样本 04 · 计划意图</small><p><strong>用户输入：</strong>“明天下午三点提醒我交材料。”</p><p><strong>期望行为：</strong>识别为日计划创建请求，展示待确认卡片；用户确认前不创建正式计划。</p><p><strong>检验点：</strong>正确识别意图和时间，同时守住“确认后才写入”的操作边界。</p></article>' +
+        '</div><p class="work-prose">评测时，我会分别记录模型原始输出、策略调整后的结果和失败类型。这样才能判断问题出在模型理解、记忆召回、产品规则，还是最终回复，而不是用一个总分概括所有问题。</p>') +
+      yankoChapter("06", "结果和期望",
+        '<p class="work-prose">目前已完成可访问的免登录演示，以及角色、记忆、计划和反馈相关的产品方案与本地验证。下一步，我会优先用获得授权的真实任务观察三类问题：计划是否被误创建、旧记忆是否正确更新、角色是否在长对话中保持一致。进行产品的迭代升级。</p>' +
         '<div class="button-row">' + workLink("https://yanko-three.vercel.app/chat", "体验免登录 Demo →") + workLink("https://github.com/aurelialabs/yanko", "查看项目代码 →", true) + openButton("projects", "返回项目目录") + "</div>") +
       "</article>";
   }
